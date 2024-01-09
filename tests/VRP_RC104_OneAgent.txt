@@ -1,0 +1,19 @@
+EXPERIMENT PARAMETERS
+
+Instance: RC104
+Best_OF: 1135.48
+Best_Routes: 10
+Problem_Description: vrp
+Problem_Dimension: 1
+Problem_Type:
+1 min
+Gama_MO: -
+Executions_Number: 30
+Number_Of_Methods: 1
+Method_Parameters_Files:
+1 ILS_VND_Adaptive
+Cooperation
+Type: pool
+Receiver_Size: 10
+Radius_Niche: 10
+Max_Size_Pool: 50
