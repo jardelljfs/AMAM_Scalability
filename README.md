@@ -1,1 +1,1 @@
-Versão atual do Framework AMAM utilizado no meu doutorado.
+Versão Atual do Framework AMAM utilizado no meu doutorado.
