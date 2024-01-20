@@ -1,0 +1,28 @@
+EXPERIMENT PARAMETERS
+
+Instance: R111
+Best_OF: 1096.72
+Best_Routes: 10
+Problem_Description: vrp
+Problem_Dimension: 1
+Problem_Type:
+1 min
+Gama_MO: -
+Executions_Number: 1
+Number_Of_Methods: 10
+Method_Parameters_Files:
+1 ILS_VND_Adaptive
+2 ILS_VND_Adaptive
+3 ILS_VND_Adaptive
+4 ILS_VND_Adaptive
+5 ILS_VND_Adaptive
+6 ILS_VND_Adaptive
+7 ILS_VND_Adaptive
+8 ILS_VND_Adaptive
+9 ILS_VND_Adaptive
+10 ILS_VND_Adaptive
+Cooperation
+Type: pool
+Receiver_Size: 10
+Radius_Niche: 10
+Max_Size_Pool: 50

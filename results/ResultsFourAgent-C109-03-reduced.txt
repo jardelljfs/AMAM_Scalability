@@ -1,0 +1,179 @@
+
+----INITIAL SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 13237.999999523163
+Cost Without Penalty: 2237.999999523163
+Number of Routes: 11
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 0.219
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11290.800005674362
+Cost Without Penalty: 1290.8000056743622
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 12.022
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11202.800002336502
+Cost Without Penalty: 1202.800002336502
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 17.825
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11191.100007295609
+Cost Without Penalty: 1191.1000072956085
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 33.839
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11164.100008249283
+Cost Without Penalty: 1164.1000082492828
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 60.671
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11096.900004863739
+Cost Without Penalty: 1096.900004863739
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 70.405
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11040.999997854233
+Cost Without Penalty: 1040.9999978542328
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 80.779
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11027.800003767014
+Cost Without Penalty: 1027.8000037670135
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 94.696
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11023.800003767014
+Cost Without Penalty: 1023.8000037670135
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 123.985
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10985.600001573563
+Cost Without Penalty: 985.6000015735626
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 182.029
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10930.300000429153
+Cost Without Penalty: 930.3000004291534
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 202.314
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10901.70000052452
+Cost Without Penalty: 901.7000005245209
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 341.33
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10897.700001478195
+Cost Without Penalty: 897.7000014781952
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 671.742
+Receiver: 
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10876.099999666214
+Cost Without Penalty: 876.099999666214
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 733.94
+Receiver: 
+id: 1 - time: 230.395
+id: 1 - time: 268.228
+id: 1 - time: 472.852
+id: 1 - time: 472.852
+id: 3 - time: 732.594
+
+
+----FINAL SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10876.099999666214
+Cost Without Penalty: 876.099999666214
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 3 - time: 733.94
+Receiver: 
+id: 1 - time: 230.395
+id: 1 - time: 268.228
+id: 1 - time: 472.852
+id: 1 - time: 472.852
+id: 3 - time: 732.594
+
+
+TEMPO DE EXECU��O TOTAL: 819.288s

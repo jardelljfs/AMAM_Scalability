@@ -1,0 +1,1392 @@
+
+----INITIAL SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 12977.69999718666
+Cost Without Penalty: 1977.6999971866608
+Number of Routes: 11
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 0.254s
+Receiver: 
+
+ROTAS: 
+Route 1: 
+0 - 33 - 57 - 55 - 78 - 71 - 70 - 73 - 77 - 79 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 866.2
+
+Route 2: 
+0 - 42 - 53 - 54 - 18 - 15 - 16 - 9 - 
+Number of Clients in the Route: 7
+Total Demand: 190
+Total Time: 699.4
+
+Route 3: 
+0 - 98 - 96 - 32 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 10
+Total Demand: 190
+Total Time: 940.89996
+
+Route 4: 
+0 - 81 - 76 - 86 - 95 - 94 - 92 - 93 - 97 - 4 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 867.8
+
+Route 5: 
+0 - 5 - 13 - 17 - 43 - 40 - 56 - 60 - 64 - 68 - 2 - 1 - 
+Number of Clients in the Route: 11
+Total Demand: 190
+Total Time: 1092.9
+
+Route 6: 
+0 - 65 - 83 - 90 - 7 - 8 - 10 - 11 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 12
+Total Demand: 170
+Total Time: 1103.7
+
+Route 7: 
+0 - 67 - 63 - 82 - 87 - 84 - 74 - 72 - 80 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 755.99994
+
+Route 8: 
+0 - 41 - 24 - 25 - 20 - 29 - 44 - 46 - 45 - 88 - 89 - 91 - 
+Number of Clients in the Route: 11
+Total Demand: 180
+Total Time: 1039.2999
+
+Route 9: 
+0 - 3 - 19 - 27 - 62 - 85 - 100 - 6 - 12 - 99 - 75 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 1068.6001
+
+Route 10: 
+0 - 30 - 48 - 58 - 59 - 52 - 49 - 66 - 69 - 
+Number of Clients in the Route: 8
+Total Demand: 100
+Total Time: 1107.7
+
+Route 11: 
+0 - 61 - 51 - 14 - 50 - 47 - 
+Number of Clients in the Route: 5
+Total Demand: 50
+Total Time: 959.1
+
+
+
+SOLUTION TIME: 0.254s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 12338.69999909401
+Cost Without Penalty: 1338.6999990940094
+Number of Routes: 11
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 12.213s
+Receiver: 
+
+ROTAS: 
+Route 1: 
+0 - 57 - 55 - 76 - 71 - 70 - 73 - 77 - 79 - 
+Number of Clients in the Route: 8
+Total Demand: 140
+Total Time: 737.0
+
+Route 2: 
+0 - 13 - 15 - 19 - 16 - 14 - 
+Number of Clients in the Route: 5
+Total Demand: 130
+Total Time: 511.0
+
+Route 3: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 4: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 
+Number of Clients in the Route: 7
+Total Demand: 160
+Total Time: 592.30005
+
+Route 5: 
+0 - 20 - 17 - 18 - 30 - 68 - 61 - 64 - 66 - 69 - 
+Number of Clients in the Route: 9
+Total Demand: 110
+Total Time: 950.0
+
+Route 6: 
+0 - 5 - 3 - 7 - 8 - 11 - 10 - 23 - 28 - 26 - 22 - 21 - 
+Number of Clients in the Route: 11
+Total Demand: 160
+Total Time: 953.2
+
+Route 7: 
+0 - 65 - 63 - 81 - 78 - 82 - 74 - 72 - 80 - 
+Number of Clients in the Route: 8
+Total Demand: 200
+Total Time: 773.9
+
+Route 8: 
+0 - 43 - 24 - 25 - 27 - 29 - 46 - 45 - 89 - 88 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 924.6
+
+Route 9: 
+0 - 67 - 62 - 41 - 42 - 44 - 48 - 51 - 12 - 100 - 99 - 
+Number of Clients in the Route: 10
+Total Demand: 140
+Total Time: 946.4
+
+Route 10: 
+0 - 40 - 54 - 53 - 56 - 58 - 60 - 59 - 50 - 52 - 49 - 47 - 
+Number of Clients in the Route: 11
+Total Demand: 200
+Total Time: 1087.7
+
+Route 11: 
+0 - 90 - 87 - 86 - 83 - 84 - 85 - 4 - 9 - 6 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 200
+Total Time: 1072.8
+
+
+
+SOLUTION TIME: 12.213s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11132.100001335144
+Cost Without Penalty: 1132.100001335144
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 21.771s
+Receiver: 
+
+ROTAS: 
+Route 1: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 
+Number of Clients in the Route: 8
+Total Demand: 140
+Total Time: 700.4
+
+Route 2: 
+0 - 13 - 17 - 18 - 19 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 687.8
+
+Route 3: 
+0 - 43 - 40 - 57 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 10
+Total Demand: 190
+Total Time: 910.6
+
+Route 4: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 5: 
+0 - 33 - 32 - 42 - 45 - 44 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 11
+Total Demand: 170
+Total Time: 1059.3
+
+Route 6: 
+0 - 5 - 3 - 7 - 8 - 11 - 10 - 23 - 28 - 26 - 22 - 21 - 
+Number of Clients in the Route: 11
+Total Demand: 160
+Total Time: 953.2
+
+Route 7: 
+0 - 67 - 65 - 63 - 62 - 74 - 82 - 80 - 48 - 47 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 867.0
+
+Route 8: 
+0 - 20 - 24 - 25 - 27 - 30 - 29 - 46 - 50 - 88 - 89 - 91 - 
+Number of Clients in the Route: 11
+Total Demand: 180
+Total Time: 1007.1
+
+Route 9: 
+0 - 41 - 55 - 54 - 53 - 56 - 58 - 60 - 59 - 51 - 52 - 49 - 
+Number of Clients in the Route: 11
+Total Demand: 200
+Total Time: 996.8
+
+Route 10: 
+0 - 90 - 87 - 86 - 83 - 84 - 85 - 4 - 9 - 6 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 200
+Total Time: 1072.8
+
+
+
+SOLUTION TIME: 21.771s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11090.100002527237
+Cost Without Penalty: 1090.100002527237
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 40.442s
+Receiver: 
+
+ROTAS: 
+Route 1: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 
+Number of Clients in the Route: 8
+Total Demand: 140
+Total Time: 700.4
+
+Route 2: 
+0 - 13 - 17 - 18 - 19 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 687.8
+
+Route 3: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 4: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 5: 
+0 - 43 - 42 - 40 - 57 - 45 - 44 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 12
+Total Demand: 160
+Total Time: 1084.3999
+
+Route 6: 
+0 - 5 - 3 - 7 - 8 - 11 - 10 - 23 - 28 - 26 - 22 - 21 - 
+Number of Clients in the Route: 11
+Total Demand: 160
+Total Time: 953.2
+
+Route 7: 
+0 - 67 - 65 - 63 - 62 - 74 - 82 - 80 - 48 - 47 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 867.0
+
+Route 8: 
+0 - 20 - 24 - 25 - 27 - 30 - 29 - 46 - 50 - 88 - 89 - 91 - 
+Number of Clients in the Route: 11
+Total Demand: 180
+Total Time: 1007.1
+
+Route 9: 
+0 - 41 - 55 - 54 - 53 - 56 - 58 - 60 - 59 - 51 - 52 - 49 - 
+Number of Clients in the Route: 11
+Total Demand: 200
+Total Time: 996.8
+
+Route 10: 
+0 - 90 - 87 - 86 - 83 - 84 - 85 - 4 - 9 - 6 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 200
+Total Time: 1072.8
+
+
+
+SOLUTION TIME: 40.442s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11077.800000667572
+Cost Without Penalty: 1077.800000667572
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 59.668s
+Receiver: 
+
+ROTAS: 
+Route 1: 
+0 - 90 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 10
+Total Demand: 160
+Total Time: 890.89996
+
+Route 2: 
+0 - 13 - 17 - 18 - 19 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 687.8
+
+Route 3: 
+0 - 31 - 32 - 33 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 697.0
+
+Route 4: 
+0 - 98 - 96 - 95 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 8
+Total Demand: 180
+Total Time: 692.1
+
+Route 5: 
+0 - 43 - 42 - 40 - 57 - 45 - 44 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 12
+Total Demand: 160
+Total Time: 1084.3999
+
+Route 6: 
+0 - 5 - 3 - 7 - 8 - 11 - 10 - 30 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 12
+Total Demand: 170
+Total Time: 1048.6
+
+Route 7: 
+0 - 67 - 65 - 63 - 62 - 74 - 84 - 85 - 89 - 
+Number of Clients in the Route: 8
+Total Demand: 200
+Total Time: 689.9
+
+Route 8: 
+0 - 20 - 24 - 25 - 27 - 29 - 35 - 46 - 48 - 50 - 47 - 91 - 
+Number of Clients in the Route: 11
+Total Demand: 160
+Total Time: 1018.5
+
+Route 9: 
+0 - 41 - 55 - 54 - 53 - 56 - 58 - 60 - 59 - 51 - 52 - 49 - 
+Number of Clients in the Route: 11
+Total Demand: 200
+Total Time: 996.8
+
+Route 10: 
+0 - 87 - 86 - 83 - 82 - 94 - 88 - 4 - 9 - 6 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 200
+Total Time: 1117.0
+
+
+
+SOLUTION TIME: 59.668s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11043.500000953674
+Cost Without Penalty: 1043.5000009536743
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 62.937s
+Receiver: 
+
+ROTAS: 
+Route 1: 
+0 - 90 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 10
+Total Demand: 160
+Total Time: 890.89996
+
+Route 2: 
+0 - 13 - 17 - 18 - 19 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 687.8
+
+Route 3: 
+0 - 31 - 32 - 33 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 697.0
+
+Route 4: 
+0 - 98 - 96 - 95 - 92 - 93 - 97 - 100 - 99 - 91 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 802.69995
+
+Route 5: 
+0 - 43 - 42 - 40 - 57 - 45 - 44 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 12
+Total Demand: 160
+Total Time: 1084.3999
+
+Route 6: 
+0 - 5 - 3 - 7 - 8 - 11 - 10 - 30 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 12
+Total Demand: 170
+Total Time: 1048.6
+
+Route 7: 
+0 - 67 - 65 - 63 - 62 - 74 - 84 - 85 - 89 - 
+Number of Clients in the Route: 8
+Total Demand: 200
+Total Time: 689.9
+
+Route 8: 
+0 - 20 - 24 - 25 - 27 - 29 - 35 - 46 - 48 - 50 - 49 - 47 - 
+Number of Clients in the Route: 11
+Total Demand: 160
+Total Time: 980.1
+
+Route 9: 
+0 - 41 - 55 - 54 - 53 - 56 - 58 - 60 - 59 - 51 - 52 - 
+Number of Clients in the Route: 10
+Total Demand: 190
+Total Time: 903.8
+
+Route 10: 
+0 - 87 - 86 - 83 - 82 - 94 - 88 - 4 - 9 - 6 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 200
+Total Time: 1117.0
+
+
+
+SOLUTION TIME: 62.937s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11041.900000810623
+Cost Without Penalty: 1041.9000008106232
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 81.607s
+Receiver: 
+
+ROTAS: 
+Route 1: 
+0 - 90 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 10
+Total Demand: 160
+Total Time: 890.89996
+
+Route 2: 
+0 - 13 - 17 - 18 - 19 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 687.8
+
+Route 3: 
+0 - 31 - 32 - 33 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 697.0
+
+Route 4: 
+0 - 98 - 96 - 95 - 92 - 93 - 97 - 100 - 99 - 91 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 802.69995
+
+Route 5: 
+0 - 43 - 42 - 57 - 44 - 46 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 11
+Total Demand: 170
+Total Time: 995.89996
+
+Route 6: 
+0 - 5 - 3 - 7 - 8 - 11 - 10 - 30 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 12
+Total Demand: 170
+Total Time: 1048.6
+
+Route 7: 
+0 - 67 - 65 - 63 - 62 - 74 - 84 - 85 - 89 - 
+Number of Clients in the Route: 8
+Total Demand: 200
+Total Time: 689.9
+
+Route 8: 
+0 - 20 - 24 - 25 - 27 - 29 - 35 - 51 - 45 - 48 - 50 - 52 - 
+Number of Clients in the Route: 11
+Total Demand: 140
+Total Time: 977.3
+
+Route 9: 
+0 - 41 - 40 - 55 - 54 - 53 - 56 - 58 - 60 - 59 - 49 - 47 - 
+Number of Clients in the Route: 11
+Total Demand: 200
+Total Time: 993.5
+
+Route 10: 
+0 - 87 - 86 - 83 - 82 - 94 - 88 - 4 - 9 - 6 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 200
+Total Time: 1117.0
+
+
+
+SOLUTION TIME: 81.607s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11023.800003767014
+Cost Without Penalty: 1023.8000037670135
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 130.901s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 57 - 55 - 54 - 53 - 56 - 58 - 60 - 59 - 
+Number of Clients in the Route: 8
+Total Demand: 200
+Total Time: 696.7
+
+Route 2: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 9
+Total Demand: 150
+Total Time: 795.7
+
+Route 4: 
+0 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 8
+Total Demand: 170
+Total Time: 694.6
+
+Route 5: 
+0 - 65 - 67 - 32 - 29 - 27 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 9
+Total Demand: 180
+Total Time: 826.6
+
+Route 6: 
+0 - 63 - 90 - 87 - 86 - 83 - 82 - 84 - 85 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 190
+Total Time: 875.49994
+
+Route 7: 
+0 - 13 - 17 - 19 - 18 - 30 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 889.2
+
+Route 8: 
+0 - 20 - 24 - 25 - 10 - 8 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 200
+Total Time: 1047.0
+
+Route 9: 
+0 - 7 - 3 - 5 - 62 - 74 - 88 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 12
+Total Demand: 200
+Total Time: 1120.3
+
+Route 10: 
+0 - 43 - 42 - 41 - 40 - 44 - 46 - 45 - 48 - 51 - 50 - 52 - 49 - 47 - 
+Number of Clients in the Route: 13
+Total Demand: 160
+Total Time: 1126.6
+
+
+
+SOLUTION TIME: 130.901s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11012.300003290176
+Cost Without Penalty: 1012.3000032901764
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 141.471s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 57 - 55 - 54 - 53 - 56 - 58 - 60 - 59 - 
+Number of Clients in the Route: 8
+Total Demand: 200
+Total Time: 696.7
+
+Route 2: 
+0 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 8
+Total Demand: 170
+Total Time: 692.2
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 9
+Total Demand: 150
+Total Time: 795.7
+
+Route 4: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 5: 
+0 - 20 - 24 - 25 - 27 - 29 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.6
+
+Route 6: 
+0 - 67 - 65 - 63 - 86 - 83 - 82 - 84 - 85 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 180
+Total Time: 873.5999
+
+Route 7: 
+0 - 13 - 17 - 19 - 18 - 30 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 889.2
+
+Route 8: 
+0 - 90 - 87 - 98 - 8 - 10 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 190
+Total Time: 1080.5
+
+Route 9: 
+0 - 7 - 3 - 5 - 62 - 74 - 88 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 12
+Total Demand: 200
+Total Time: 1120.3
+
+Route 10: 
+0 - 43 - 42 - 41 - 40 - 44 - 46 - 45 - 48 - 51 - 50 - 52 - 49 - 47 - 
+Number of Clients in the Route: 13
+Total Demand: 160
+Total Time: 1126.6
+
+
+
+SOLUTION TIME: 141.471s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 11002.700004577637
+Cost Without Penalty: 1002.7000045776367
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 191.844s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 57 - 55 - 54 - 53 - 56 - 58 - 59 - 68 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 709.8
+
+Route 2: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 9
+Total Demand: 150
+Total Time: 795.7
+
+Route 4: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 5: 
+0 - 20 - 24 - 25 - 27 - 29 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.6
+
+Route 6: 
+0 - 63 - 90 - 87 - 86 - 83 - 82 - 84 - 85 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 190
+Total Time: 875.49994
+
+Route 7: 
+0 - 13 - 17 - 19 - 18 - 30 - 28 - 26 - 23 - 22 - 21 - 49 - 47 - 
+Number of Clients in the Route: 12
+Total Demand: 190
+Total Time: 1088.3
+
+Route 8: 
+0 - 5 - 3 - 7 - 8 - 10 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1033.6
+
+Route 9: 
+0 - 67 - 65 - 62 - 74 - 88 - 72 - 61 - 64 - 66 - 69 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 991.3
+
+Route 10: 
+0 - 43 - 42 - 41 - 40 - 60 - 44 - 46 - 45 - 48 - 51 - 50 - 52 - 
+Number of Clients in the Route: 12
+Total Demand: 160
+Total Time: 1086.2
+
+
+
+SOLUTION TIME: 191.844s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10986.100004434586
+Cost Without Penalty: 986.1000044345856
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 229.119s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 57 - 55 - 54 - 53 - 56 - 58 - 59 - 68 - 69 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 804.8
+
+Route 2: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 9
+Total Demand: 150
+Total Time: 795.7
+
+Route 4: 
+0 - 32 - 33 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 8
+Total Demand: 180
+Total Time: 690.2
+
+Route 5: 
+0 - 24 - 25 - 27 - 31 - 29 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 818.4
+
+Route 6: 
+0 - 90 - 87 - 86 - 83 - 82 - 84 - 85 - 88 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 863.6
+
+Route 7: 
+0 - 13 - 17 - 19 - 18 - 30 - 28 - 26 - 23 - 22 - 21 - 49 - 47 - 
+Number of Clients in the Route: 12
+Total Demand: 190
+Total Time: 1088.3
+
+Route 8: 
+0 - 5 - 3 - 7 - 8 - 10 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1033.6
+
+Route 9: 
+0 - 20 - 67 - 65 - 63 - 62 - 74 - 72 - 61 - 64 - 66 - 
+Number of Clients in the Route: 10
+Total Demand: 190
+Total Time: 865.7
+
+Route 10: 
+0 - 43 - 42 - 41 - 40 - 60 - 44 - 46 - 45 - 48 - 51 - 50 - 52 - 
+Number of Clients in the Route: 12
+Total Demand: 160
+Total Time: 1086.2
+
+
+
+SOLUTION TIME: 229.119s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10956.100003957748
+Cost Without Penalty: 956.1000039577484
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 271.713s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 55 - 54 - 53 - 56 - 58 - 59 - 68 - 69 - 
+Number of Clients in the Route: 8
+Total Demand: 160
+Total Time: 763.0
+
+Route 2: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 9
+Total Demand: 150
+Total Time: 795.7
+
+Route 4: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 5: 
+0 - 20 - 24 - 25 - 27 - 29 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.6
+
+Route 6: 
+0 - 90 - 87 - 86 - 83 - 82 - 84 - 85 - 88 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 863.6
+
+Route 7: 
+0 - 13 - 17 - 19 - 18 - 30 - 28 - 26 - 23 - 22 - 21 - 49 - 47 - 
+Number of Clients in the Route: 12
+Total Demand: 190
+Total Time: 1088.3
+
+Route 8: 
+0 - 5 - 3 - 7 - 8 - 10 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1033.6
+
+Route 9: 
+0 - 43 - 67 - 65 - 63 - 62 - 74 - 72 - 61 - 64 - 66 - 
+Number of Clients in the Route: 10
+Total Demand: 190
+Total Time: 867.3
+
+Route 10: 
+0 - 42 - 41 - 40 - 57 - 60 - 44 - 46 - 45 - 48 - 51 - 50 - 52 - 
+Number of Clients in the Route: 12
+Total Demand: 190
+Total Time: 1086.2
+
+
+
+SOLUTION TIME: 271.713s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10939.000004291534
+Cost Without Penalty: 939.0000042915344
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 332.047s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 41 - 55 - 54 - 53 - 56 - 58 - 59 - 68 - 
+Number of Clients in the Route: 8
+Total Demand: 160
+Total Time: 712.1
+
+Route 2: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 9
+Total Demand: 150
+Total Time: 795.7
+
+Route 4: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 5: 
+0 - 20 - 24 - 25 - 27 - 29 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.6
+
+Route 6: 
+0 - 90 - 87 - 86 - 83 - 82 - 84 - 85 - 88 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 863.6
+
+Route 7: 
+0 - 13 - 17 - 19 - 18 - 30 - 28 - 26 - 23 - 22 - 21 - 49 - 47 - 
+Number of Clients in the Route: 12
+Total Demand: 190
+Total Time: 1088.3
+
+Route 8: 
+0 - 5 - 3 - 7 - 8 - 10 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1033.6
+
+Route 9: 
+0 - 67 - 65 - 63 - 62 - 74 - 72 - 61 - 64 - 66 - 69 - 
+Number of Clients in the Route: 10
+Total Demand: 190
+Total Time: 850.2
+
+Route 10: 
+0 - 43 - 42 - 40 - 57 - 60 - 44 - 46 - 45 - 48 - 51 - 50 - 52 - 
+Number of Clients in the Route: 12
+Total Demand: 190
+Total Time: 1086.2
+
+
+
+SOLUTION TIME: 332.047s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10935.80000257492
+Cost Without Penalty: 935.8000025749207
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 361.041s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 41 - 55 - 54 - 53 - 56 - 58 - 59 - 
+Number of Clients in the Route: 7
+Total Demand: 150
+Total Time: 605.6
+
+Route 2: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 68 - 47 - 49 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1123.8
+
+Route 4: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 5: 
+0 - 20 - 24 - 25 - 27 - 29 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.6
+
+Route 6: 
+0 - 90 - 87 - 86 - 83 - 82 - 84 - 85 - 88 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 863.6
+
+Route 7: 
+0 - 13 - 17 - 19 - 18 - 30 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 889.2
+
+Route 8: 
+0 - 5 - 3 - 7 - 8 - 10 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1033.6
+
+Route 9: 
+0 - 67 - 65 - 63 - 62 - 74 - 72 - 61 - 64 - 66 - 69 - 
+Number of Clients in the Route: 10
+Total Demand: 190
+Total Time: 850.2
+
+Route 10: 
+0 - 43 - 42 - 40 - 57 - 60 - 44 - 46 - 45 - 48 - 51 - 50 - 52 - 
+Number of Clients in the Route: 12
+Total Demand: 190
+Total Time: 1086.2
+
+
+
+SOLUTION TIME: 361.041s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10920.50000333786
+Cost Without Penalty: 920.5000033378601
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 491.875s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 41 - 55 - 54 - 53 - 56 - 58 - 59 - 49 - 47 - 
+Number of Clients in the Route: 9
+Total Demand: 170
+Total Time: 858.0
+
+Route 2: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 9
+Total Demand: 150
+Total Time: 795.7
+
+Route 4: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 5: 
+0 - 20 - 24 - 25 - 27 - 29 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.6
+
+Route 6: 
+0 - 90 - 87 - 86 - 83 - 82 - 84 - 85 - 88 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 863.6
+
+Route 7: 
+0 - 13 - 17 - 19 - 18 - 30 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 889.2
+
+Route 8: 
+0 - 5 - 3 - 7 - 8 - 10 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1033.6
+
+Route 9: 
+0 - 67 - 65 - 63 - 62 - 74 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 11
+Total Demand: 200
+Total Time: 943.5
+
+Route 10: 
+0 - 43 - 42 - 40 - 57 - 60 - 44 - 46 - 45 - 48 - 51 - 50 - 52 - 
+Number of Clients in the Route: 12
+Total Demand: 190
+Total Time: 1086.2
+
+
+
+SOLUTION TIME: 491.875s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10877.100002765656
+Cost Without Penalty: 877.1000027656555
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 564.853s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 41 - 55 - 54 - 53 - 56 - 58 - 59 - 49 - 47 - 
+Number of Clients in the Route: 9
+Total Demand: 170
+Total Time: 858.0
+
+Route 2: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 9
+Total Demand: 150
+Total Time: 795.7
+
+Route 4: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 5: 
+0 - 13 - 17 - 18 - 19 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 687.8
+
+Route 6: 
+0 - 90 - 87 - 86 - 83 - 82 - 84 - 85 - 88 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 863.6
+
+Route 7: 
+0 - 20 - 24 - 25 - 27 - 29 - 30 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 11
+Total Demand: 170
+Total Time: 940.6
+
+Route 8: 
+0 - 5 - 3 - 7 - 8 - 10 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1033.6
+
+Route 9: 
+0 - 67 - 65 - 63 - 62 - 74 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 11
+Total Demand: 200
+Total Time: 943.5
+
+Route 10: 
+0 - 43 - 42 - 40 - 57 - 60 - 44 - 46 - 45 - 48 - 51 - 50 - 52 - 
+Number of Clients in the Route: 12
+Total Demand: 190
+Total Time: 1086.2
+
+
+
+SOLUTION TIME: 564.853s
+
+----BEST SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10873.400003671646
+Cost Without Penalty: 873.4000036716461
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 772.243s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 43 - 42 - 57 - 58 - 60 - 44 - 46 - 49 - 47 - 
+Number of Clients in the Route: 9
+Total Demand: 180
+Total Time: 858.0
+
+Route 2: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 9
+Total Demand: 150
+Total Time: 795.7
+
+Route 4: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 5: 
+0 - 13 - 17 - 18 - 19 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 687.8
+
+Route 6: 
+0 - 90 - 87 - 86 - 83 - 82 - 84 - 85 - 88 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 863.6
+
+Route 7: 
+0 - 20 - 24 - 25 - 27 - 29 - 30 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 11
+Total Demand: 170
+Total Time: 940.6
+
+Route 8: 
+0 - 5 - 3 - 7 - 8 - 10 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1033.6
+
+Route 9: 
+0 - 67 - 65 - 63 - 62 - 74 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 11
+Total Demand: 200
+Total Time: 943.5
+
+Route 10: 
+0 - 41 - 40 - 55 - 54 - 53 - 56 - 59 - 45 - 48 - 51 - 50 - 52 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1081.2
+
+
+
+SOLUTION TIME: 772.243s
+
+
+----FINAL SOLUTION----
+
+  *** SOLUTION ***
+Objective Function: 10873.400003671646
+Cost Without Penalty: 873.4000036716461
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 772.243s
+Receiver: 
+id: 0 - time: 129.993s
+
+ROTAS: 
+Route 1: 
+0 - 43 - 42 - 57 - 58 - 60 - 44 - 46 - 49 - 47 - 
+Number of Clients in the Route: 9
+Total Demand: 180
+Total Time: 858.0
+
+Route 2: 
+0 - 98 - 96 - 95 - 94 - 92 - 93 - 97 - 100 - 99 - 
+Number of Clients in the Route: 9
+Total Demand: 190
+Total Time: 782.30005
+
+Route 3: 
+0 - 81 - 78 - 76 - 71 - 70 - 73 - 77 - 79 - 80 - 
+Number of Clients in the Route: 9
+Total Demand: 150
+Total Time: 795.7
+
+Route 4: 
+0 - 32 - 33 - 31 - 35 - 37 - 38 - 39 - 36 - 34 - 
+Number of Clients in the Route: 9
+Total Demand: 200
+Total Time: 784.7
+
+Route 5: 
+0 - 13 - 17 - 18 - 19 - 15 - 16 - 14 - 12 - 
+Number of Clients in the Route: 8
+Total Demand: 190
+Total Time: 687.8
+
+Route 6: 
+0 - 90 - 87 - 86 - 83 - 82 - 84 - 85 - 88 - 89 - 91 - 
+Number of Clients in the Route: 10
+Total Demand: 170
+Total Time: 863.6
+
+Route 7: 
+0 - 20 - 24 - 25 - 27 - 29 - 30 - 28 - 26 - 23 - 22 - 21 - 
+Number of Clients in the Route: 11
+Total Demand: 170
+Total Time: 940.6
+
+Route 8: 
+0 - 5 - 3 - 7 - 8 - 10 - 11 - 9 - 6 - 4 - 2 - 1 - 75 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1033.6
+
+Route 9: 
+0 - 67 - 65 - 63 - 62 - 74 - 72 - 61 - 64 - 68 - 66 - 69 - 
+Number of Clients in the Route: 11
+Total Demand: 200
+Total Time: 943.5
+
+Route 10: 
+0 - 41 - 40 - 55 - 54 - 53 - 56 - 59 - 45 - 48 - 51 - 50 - 52 - 
+Number of Clients in the Route: 12
+Total Demand: 180
+Total Time: 1081.2
+
+
+
+TEMPO DE EXECU��O TOTAL: 819.369s
