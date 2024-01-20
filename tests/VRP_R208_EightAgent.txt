@@ -8,7 +8,7 @@ Problem_Dimension: 1
 Problem_Type:
 1 min
 Gama_MO: -
-Executions_Number: 30
+Executions_Number: 1
 Number_Of_Methods: 8
 Method_Parameters_Files:
 1 ILS_VND_Adaptive
