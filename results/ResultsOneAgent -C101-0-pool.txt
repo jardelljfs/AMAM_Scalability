@@ -1,0 +1,102 @@
+
+
+
+POOL SOLUTIONS
+
+
+TAMANHO: 6
+
+
+  *** SOLUTION ***
+Objective Function: 13189.500006198883
+Cost Without Penalty: 1189.500006198883
+Number of Routes: 12
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 0.08
+Receiver: 
+id: 0 - time: 4.891
+id: 0 - time: 6.953
+id: 0 - time: 8.045
+id: 0 - time: 8.045
+id: 0 - time: 9.184
+id: 0 - time: 9.981
+id: 0 - time: 10.864
+id: 0 - time: 10.864
+id: 0 - time: 10.864
+id: 0 - time: 10.864
+
+  *** SOLUTION ***
+Objective Function: 11895.000003814697
+Cost Without Penalty: 895.0000038146973
+Number of Routes: 11
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 0.81
+Receiver: 
+id: 0 - time: 4.889
+id: 0 - time: 4.891
+id: 0 - time: 5.898
+id: 0 - time: 5.898
+id: 0 - time: 5.898
+id: 0 - time: 8.045
+id: 0 - time: 8.045
+id: 0 - time: 9.184
+id: 0 - time: 9.184
+id: 0 - time: 9.981
+
+  *** SOLUTION ***
+Objective Function: 11893.100003242493
+Cost Without Penalty: 893.1000032424927
+Number of Routes: 11
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 3.263
+Receiver: 
+id: 0 - time: 4.891
+id: 0 - time: 4.891
+id: 0 - time: 5.898
+id: 0 - time: 5.898
+id: 0 - time: 6.953
+id: 0 - time: 6.953
+id: 0 - time: 8.045
+id: 0 - time: 9.184
+id: 0 - time: 9.184
+id: 0 - time: 9.184
+
+  *** SOLUTION ***
+Objective Function: 11890.800003051758
+Cost Without Penalty: 890.8000030517578
+Number of Routes: 11
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 4.064
+Receiver: 
+id: 0 - time: 4.891
+id: 0 - time: 5.898
+id: 0 - time: 6.953
+id: 0 - time: 6.953
+id: 0 - time: 6.953
+id: 0 - time: 8.045
+id: 0 - time: 9.981
+id: 0 - time: 9.981
+id: 0 - time: 10.864
+id: 0 - time: 10.864
+
+  *** SOLUTION ***
+Objective Function: 11881.600003004074
+Cost Without Penalty: 881.6000030040741
+Number of Routes: 11
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 19.565
+Receiver: 
+
+  *** SOLUTION ***
+Objective Function: 10827.300001859665
+Cost Without Penalty: 827.3000018596649
+Number of Routes: 10
+Fitness Function: 0.0
+Sender:
+id: 0 - time: 20.705
+Receiver: 
