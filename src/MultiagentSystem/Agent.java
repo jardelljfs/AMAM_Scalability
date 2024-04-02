@@ -16,7 +16,7 @@ import Parameters.Parameters;
  * 
  * Copyright (C) 2013-2018 Silva, M.A.L.
  * Function: Class that defines the Agent and the thread.  
- * @author Maria Amélia Lopes Silva <mamelia@ufv.br>
+ * @author Maria Amï¿½lia Lopes Silva <mamelia@ufv.br>
  **/
 
 public class Agent extends ThreadBase{
@@ -91,22 +91,22 @@ public class Agent extends ThreadBase{
 		//System.out.print("\n\n----FINAL SOLUTION----");
 		//this.final_solution.showSolution(p);
 		
-		try {
-			parameters.getMethodParametersI(this.id).getFw().writerTextFile("\n\n----FINAL SOLUTION----");
-			parameters.getMethodParametersI(this.id).getFwReduced().writerTextFile("\n\n----FINAL SOLUTION----");
+		/*try {
+			//parameters.getMethodParametersI(this.id).getFw().writerTextFile("\n\n----FINAL SOLUTION----");
+			//parameters.getMethodParametersI(this.id).getFwReduced().writerTextFile("\n\n----FINAL SOLUTION----");
 			this.final_solution.writeSolution(this.p, parameters.getMethodParametersI(this.id).getFw());
-			this.final_solution.writeSolutionST(p, parameters.getMethodParametersI(this.id).getFwSt());
-			this.final_solution.writeReduceSolution(this.p, parameters.getMethodParametersI(this.id).getFwReduced());
+			//this.final_solution.writeSolutionST(p, parameters.getMethodParametersI(this.id).getFwSt());
+			//this.final_solution.writeReduceSolution(this.p, parameters.getMethodParametersI(this.id).getFwReduced());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
-		//System.out.println("\n\nTEMPO DE EXECUÇÃO TOTAL: " + this.getTotalTimeRun()/1000.0 + "s");
+		//System.out.println("\n\nTEMPO DE EXECUï¿½ï¿½O TOTAL: " + this.getTotalTimeRun()/1000.0 + "s");
 		try {
-			parameters.getMethodParametersI(this.id).getFw().writerTextFile("\n\nTEMPO DE EXECUÇÃO TOTAL: " + this.getTotalTimeRun()/1000.0 + "s");
-			parameters.getMethodParametersI(this.id).getFwReduced().writerTextFile("\n\nTEMPO DE EXECUÇÃO TOTAL: " + this.getTotalTimeRun()/1000.0 + "s");
-			parameters.getMethodParametersI(this.id).getFwSt().writerTextFile(this.getTotalTimeRun()/1000.0 + "");			
+			parameters.getMethodParametersI(this.id).getFw().writerTextFile("\n\nTEMPO DE EXECUï¿½ï¿½O TOTAL: " + this.getTotalTimeRun()/1000.0 + "s");
+			//parameters.getMethodParametersI(this.id).getFwReduced().writerTextFile("\n\nTEMPO DE EXECUï¿½ï¿½O TOTAL: " + this.getTotalTimeRun()/1000.0 + "s");
+			//parameters.getMethodParametersI(this.id).getFwSt().writerTextFile(this.getTotalTimeRun()/1000.0 + "");			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -116,17 +116,17 @@ public class Agent extends ThreadBase{
 		parameters.getMethodParametersI(this.id_thread).getBestMethodSolution().setSearchTime(this.getTotalTimeRun());;
 		
 		//System.out.println("Teste Thread "+ this.id_execution + this.id + " Terminou!");
-		this.handler.notifyFinishThread();//notifica que o agente terminou a execução do seu método
+		this.handler.notifyFinishThread();//notifica que o agente terminou a execuï¿½ï¿½o do seu mï¿½todo
 		
 	}
 	
 	//DEFINITION OF OBSERVER ------ ALL AGENTS ARE OBSERVERS ------
 	public void update() {
-		//System.out.println("\nNOVO ELEMENTO INSERIDO NO POOL: Ver chamada de comandos para atualizar quando receber uma notificação do Pool");
+		//System.out.println("\nNOVO ELEMENTO INSERIDO NO POOL: Ver chamada de comandos para atualizar quando receber uma notificaï¿½ï¿½o do Pool");
 	}
 	
 	public void updateBestSolution() {
-		//PARAR O MÉTODO
+		//PARAR O Mï¿½TODO
 		this.setAllDone(true);
 	}
 	//----------------------

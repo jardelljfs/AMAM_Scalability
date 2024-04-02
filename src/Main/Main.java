@@ -37,16 +37,16 @@ public class Main {
 		
 		//------------------VRP-------------------
 		
-		instance = "C109";
+		instance = "C101";
 		
 		//ONE AGENT -----------------------------------
-		experiment_text_file = prob + instance + "_FourAgent";
+		experiment_text_file = prob + instance + "_OneAgent";
 		
 		//LOADS ALL PARAMETERS AND PROBLEM DATA
 		experiment = new Experiment(experiment_text_file, "");
 		
 		//RUN THE EXPERIMENT
-		experiment.runExperiment("FourAgent");
+		experiment.runExperiment("OneAgent");
 		/*				
 		//TWO AGENTS -----------------------------------
 		experiment_text_file = prob + instance + "_TwoAgent";

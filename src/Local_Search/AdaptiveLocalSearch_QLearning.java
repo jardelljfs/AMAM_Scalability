@@ -13,10 +13,10 @@ import Methods.Method;
  * Copyright (C) 2013-2018 Silva, M.A.L.
  * Function: Class that defines the structure of a basic Adaptive Local Search - based em Q-Learnig. 
  * Defined at run time by Design Pattern Builder.
- * @author Maria Amélia Lopes Silva <mamelia@ufv.br>
+ * @author Maria Amï¿½lia Lopes Silva <mamelia@ufv.br>
  **/
 
-//Local Search and VND - em função de neighborhood_size
+//Local Search and VND - em funï¿½ï¿½o de neighborhood_size
 public class AdaptiveLocalSearch_QLearning extends Method{
 
 	private AcceptationCriteria criteria;
@@ -66,7 +66,7 @@ public class AdaptiveLocalSearch_QLearning extends Method{
 		}
 		else {
 			no_improvement = 1;
-			//System.out.println("Não melhorou a solução!");
+			//System.out.println("Nï¿½o melhorou a soluï¿½ï¿½o!");
 			//this.element.getBestCurrentSolution().showOFAndFitness(p);
 		}
 		
@@ -126,7 +126,7 @@ public class AdaptiveLocalSearch_QLearning extends Method{
 						improved = false;
 						episode = false;
 					}
-					//System.out.println("Não melhorou a solução!");
+					//System.out.println("Nï¿½o melhorou a soluï¿½ï¿½o!");
 					//this.element.getBestCurrentSolution().showOFAndFitness(p);
 				}
 									
@@ -137,12 +137,12 @@ public class AdaptiveLocalSearch_QLearning extends Method{
 		}
 		
 		//this.getParameters().getQLearning().showQMatrix();
-		try {
+		/*try {
 			this.getParameters().getMethodParametersI(id_agent).getQLearning().writeQMatrix(this.getParameters().getMethodParametersI(id_agent).getFwFinalTableQ());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		return this.best_solution;
 	}

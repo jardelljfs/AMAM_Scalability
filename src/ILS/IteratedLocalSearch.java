@@ -14,7 +14,7 @@ import Methods.Method;
  * Copyright (C) 2013-2018 Silva, M.A.L.
  * Function: Class that defines the structure of a basic ILS Method. Defined at run time by 
  * Design Pattern Builder.
- * @author Maria Amélia Lopes Silva <mamelia@ufv.br>
+ * @author Maria Amï¿½lia Lopes Silva <mamelia@ufv.br>
  **/
 
 public class IteratedLocalSearch extends Method{
@@ -51,7 +51,7 @@ public class IteratedLocalSearch extends Method{
 		//ESCREVENDO NOS ARQUIVOS
 		try {
 			this.getParameters().getMethodParametersI(id_agent).getFw().writeSolutionsInTextFile(this.so, solution_time, p, "INITIAL");
-			this.getParameters().getMethodParametersI(id_agent).getFwReduced().writeSolutionsInTextFilesReduced(this.so, solution_time, p, "INITIAL");
+			//this.getParameters().getMethodParametersI(id_agent).getFwReduced().writeSolutionsInTextFilesReduced(this.so, solution_time, p, "INITIAL");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -72,7 +72,7 @@ public class IteratedLocalSearch extends Method{
 		//ESCREVENDO NOS ARQUIVOS
 		try {
 			this.getParameters().getMethodParametersI(id_agent).getFw().writeSolutionsInTextFile(this.best_solution, solution_time, p, "BEST");
-			this.getParameters().getMethodParametersI(id_agent).getFwReduced().writeSolutionsInTextFilesReduced(this.best_solution, solution_time, p, "BEST");
+			//this.getParameters().getMethodParametersI(id_agent).getFwReduced().writeSolutionsInTextFilesReduced(this.best_solution, solution_time, p, "BEST");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -108,7 +108,7 @@ public class IteratedLocalSearch extends Method{
 				//ESCREVENDO NOS ARQUIVOS
 				try {
 					this.getParameters().getMethodParametersI(id_agent).getFw().writeSolutionsInTextFile(this.best_solution, solution_time, p, "BEST");
-					this.getParameters().getMethodParametersI(id_agent).getFwReduced().writeSolutionsInTextFilesReduced(this.best_solution, solution_time, p, "BEST");
+					//this.getParameters().getMethodParametersI(id_agent).getFwReduced().writeSolutionsInTextFilesReduced(this.best_solution, solution_time, p, "BEST");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

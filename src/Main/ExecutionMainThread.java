@@ -37,9 +37,9 @@ public class ExecutionMainThread {
         for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++){
         	//OUTPUT FILES
 			parameters.getMethodParametersI(i).setFw(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + ".txt"));
-			parameters.getMethodParametersI(i).setFwReduced(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + "-reduced.txt"));
-			parameters.getMethodParametersI(i).setFwST(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + "-ST.txt"));
-			parameters.getMethodParametersI(i).setFwFinalTableQ(new WriterInFile("results/TableFinalQ" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + ".txt"));
+			//parameters.getMethodParametersI(i).setFwReduced(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + "-reduced.txt"));
+			//parameters.getMethodParametersI(i).setFwST(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + "-ST.txt"));
+			//parameters.getMethodParametersI(i).setFwFinalTableQ(new WriterInFile("results/TableFinalQ" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + ".txt"));
         	
 			listListeners.add(agent_factory.createAgent(parameters, cooperation, p, i, id_execution, this));	
         }
@@ -90,9 +90,9 @@ public class ExecutionMainThread {
         
         for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++) {
 	        parameters.getMethodParametersI(i).getFw().closeTextFile();
-			parameters.getMethodParametersI(i).getFwReduced().closeTextFile();
-			parameters.getMethodParametersI(i).getFwSt().closeTextFile();
-			parameters.getMethodParametersI(i).getFwFinalTableQ().closeTextFile();
+			//parameters.getMethodParametersI(i).getFwReduced().closeTextFile();
+			//parameters.getMethodParametersI(i).getFwSt().closeTextFile();
+			//parameters.getMethodParametersI(i).getFwFinalTableQ().closeTextFile();
         }
         
         parameters.getExperimentParameters().getFwBestSolution().closeTextFile();
