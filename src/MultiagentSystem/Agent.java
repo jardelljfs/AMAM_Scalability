@@ -103,14 +103,14 @@ public class Agent extends ThreadBase{
 		}*/
 		
 		//System.out.println("\n\nTEMPO DE EXECU��O TOTAL: " + this.getTotalTimeRun()/1000.0 + "s");
-		try {
+		/*try {
 			parameters.getMethodParametersI(this.id).getFw().writerTextFile("\n\nTEMPO DE EXECU��O TOTAL: " + this.getTotalTimeRun()/1000.0 + "s");
 			//parameters.getMethodParametersI(this.id).getFwReduced().writerTextFile("\n\nTEMPO DE EXECU��O TOTAL: " + this.getTotalTimeRun()/1000.0 + "s");
 			//parameters.getMethodParametersI(this.id).getFwSt().writerTextFile(this.getTotalTimeRun()/1000.0 + "");			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
 		
 		parameters.getMethodParametersI(this.id_thread).setFinalTime(this.getTotalTimeRun());
 		parameters.getMethodParametersI(this.id_thread).getBestMethodSolution().setSearchTime(this.getTotalTimeRun());;

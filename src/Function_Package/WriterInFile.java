@@ -29,7 +29,6 @@ public class WriterInFile {
 	public synchronized void writerTextFile(String text) throws IOException
 	{
 		bw.write(text);
-		bw.newLine();
 	}
 	
 	public synchronized void writerNewLine() throws IOException
@@ -48,18 +47,20 @@ public class WriterInFile {
 		fw.close();
 	}
 	
-	public synchronized void writeSolutionsInTextFile(Solution s,long solution_time, Problem p, String type) throws IOException 
+	public synchronized void writeSolutionsInTextFile(Solution s,long solution_time, Problem p, String instance, int agent, int n_agent) throws IOException 
 	{
-		this.writerTextFile("\n----" + type + " SOLUTION----");
+		this.writerTextFile(instance + "\t" + agent + "\t" + n_agent + "\t");
 		s.writeSolution(p, this);
-		this.writerTextFile("\n\nSOLUTION TIME: " + solution_time/1000.0 + "s");
+		this.writerTextFile(solution_time/1000.0 + "\n");
 	}
 	
-	public synchronized void writeSolutionsInTextFilesReduced(Solution s,long solution_time, Problem p, String type) throws IOException 
+	/*public synchronized void writeSolutionsInTextFilesReduced(Solution s,long solution_time, Problem p, String type) throws IOException 
 	{
-		this.writerTextFile("\n----" + type + " SOLUTION----");
+		//this.writerTextFile("\n----" + type + " SOLUTION----");
 		s.writeReduceSolution(p, this);
 		//this.writerTextFile("\n\nSOLUTION TIME: " + solution_time/1000.0 + "s");
+	}*/
+	public String getName() {
+		return this.name_file;
 	}
-	
 }

@@ -50,7 +50,7 @@ public class IteratedLocalSearch extends Method{
 			
 		//ESCREVENDO NOS ARQUIVOS
 		try {
-			this.getParameters().getMethodParametersI(id_agent).getFw().writeSolutionsInTextFile(this.so, solution_time, p, "INITIAL");
+			this.getParameters().getMethodParametersI(id_agent).getFw().writeSolutionsInTextFile(this.so, solution_time, p, this.getParameters().getExperimentParameters().getInstanceName(), this.getParameters().getExperimentParameters().getNumberOfMethods(), id_agent);
 			//this.getParameters().getMethodParametersI(id_agent).getFwReduced().writeSolutionsInTextFilesReduced(this.so, solution_time, p, "INITIAL");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -71,7 +71,7 @@ public class IteratedLocalSearch extends Method{
 	
 		//ESCREVENDO NOS ARQUIVOS
 		try {
-			this.getParameters().getMethodParametersI(id_agent).getFw().writeSolutionsInTextFile(this.best_solution, solution_time, p, "BEST");
+			this.getParameters().getMethodParametersI(id_agent).getFw().writeSolutionsInTextFile(this.best_solution, solution_time, p, this.getParameters().getExperimentParameters().getInstanceName(), this.getParameters().getExperimentParameters().getNumberOfMethods(), id_agent);
 			//this.getParameters().getMethodParametersI(id_agent).getFwReduced().writeSolutionsInTextFilesReduced(this.best_solution, solution_time, p, "BEST");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -107,7 +107,7 @@ public class IteratedLocalSearch extends Method{
 			
 				//ESCREVENDO NOS ARQUIVOS
 				try {
-					this.getParameters().getMethodParametersI(id_agent).getFw().writeSolutionsInTextFile(this.best_solution, solution_time, p, "BEST");
+					this.getParameters().getMethodParametersI(id_agent).getFw().writeSolutionsInTextFile(this.best_solution, solution_time, p, this.getParameters().getExperimentParameters().getInstanceName(), this.getParameters().getExperimentParameters().getNumberOfMethods(), id_agent);
 					//this.getParameters().getMethodParametersI(id_agent).getFwReduced().writeSolutionsInTextFilesReduced(this.best_solution, solution_time, p, "BEST");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block

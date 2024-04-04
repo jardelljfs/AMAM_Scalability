@@ -17,7 +17,7 @@ import MultiagentSystem.Agent;
  * 
  * Copyright (C) 2013-2018 Silva, M.A.L.
  * Function: Solution pool class.
- * @author Maria Amélia Lopes Silva <mamelia@ufv.br>
+ * @author Maria Amï¿½lia Lopes Silva <mamelia@ufv.br>
  **/
 
 public abstract class PoolSolutions extends CollectionSolutions {
@@ -260,7 +260,7 @@ public abstract class PoolSolutions extends CollectionSolutions {
 			}
 			else
 			{
-				//0 para soluções mais distantes (com base no raio do nicho)
+				//0 para soluï¿½ï¿½es mais distantes (com base no raio do nicho)
 				this.distance[i] = 0;
 				this.shi[i] = 0;
 			}
@@ -330,14 +330,18 @@ public abstract class PoolSolutions extends CollectionSolutions {
 		}
 	}
 	
-	public synchronized void writePoolSolutions(Problem p, WriterInFile fw) throws IOException
+	public synchronized void writePoolSolutions(Problem p, WriterInFile fw, String instance, int agent) throws IOException
 	{
-		fw.writerTextFile("\n\n\nPOOL SOLUTIONS");
-		fw.writerTextFile("\n\nTAMANHO: " + this.getSize() + "\n");
+		//fw.writerTextFile("\n\n\nPOOL SOLUTIONS");
+		//fw.writerTextFile("\n\nTAMANHO: " + this.getSize() + "\n");
+		
 		for(int i = 0; i < this.getSize(); i++)
 		{
+			fw.writerTextFile(instance + "\t" + agent + "\t");
 			this.getSolutionInCollection(i).writeSolution(p, fw);
+			fw.writerTextFile("\n");
 		}
+		
 	}
 	
 	
@@ -347,7 +351,7 @@ public abstract class PoolSolutions extends CollectionSolutions {
 		fw.writerTextFile("\n\nTAMANHO: " + this.getSize() + "\n");
 		for(int i = 0; i < this.getSize(); i++)
 		{
-			this.getSolutionInCollection(i).writeReduceSolution(p, fw);
+			this.getSolutionInCollection(i).writeSolution(p, fw);
 		}
 	}
 	

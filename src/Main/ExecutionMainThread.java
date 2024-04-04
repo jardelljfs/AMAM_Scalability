@@ -1,5 +1,10 @@
 package Main;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -76,29 +81,67 @@ public class ExecutionMainThread {
         	}
         }
         
-        this.final_solution.writeSolutionST(p, parameters.getExperimentParameters().getFwBestSolution());
+        this.final_solution.writeSolution(p, parameters.getExperimentParameters().getFwBestSolution());
+        //this.final_solution.writeSolutionST(p, parameters.getExperimentParameters().getFwBestSolution());
+
         //Tempo final de execução 
-        parameters.getExperimentParameters().getFwBestSolution().writerTextFile((System.currentTimeMillis() - parameters.getExperimentParameters().getInitialTimeExecution())/1000.0 + "");
+        parameters.getExperimentParameters().getFwBestSolution().writerTextFile("\t" + (System.currentTimeMillis() - parameters.getExperimentParameters().getInitialTimeExecution())/1000.0);
         //parameters.getExperimentParameters().getFwBestSolution().writerTextFile(this.final_solution.getSearchTime()/1000.0 + "");
         
         try {
-			cooperation.getPool().writePoolSolutionsReduce(p, parameters.getExperimentParameters().getFwPool());
+			cooperation.getPool().writePoolSolutions(p, parameters.getExperimentParameters().getFwPool(), parameters.getExperimentParameters().getInstanceName(), parameters.getExperimentParameters().getNumberOfMethods());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         
+        String filePath = "results/Results.txt";
+        
+        // Verificar se o arquivo já existe
+        File file = new File(filePath);
+        if (!file.exists()) {
+        	try {
+                // Criar o arquivo se ele não existir
+                file.createNewFile();
+            } catch (IOException e) {
+            }
+        }
+        
         for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++) {
-	        parameters.getMethodParametersI(i).getFw().closeTextFile();
+        	// Ler o conteúdo do arquivo origem e escrever no arquivo destino
+        	parameters.getMethodParametersI(i).getFw().closeTextFile();   	
 			//parameters.getMethodParametersI(i).getFwReduced().closeTextFile();
 			//parameters.getMethodParametersI(i).getFwSt().closeTextFile();
 			//parameters.getMethodParametersI(i).getFwFinalTableQ().closeTextFile();
         }
         
-        parameters.getExperimentParameters().getFwBestSolution().closeTextFile();
-		parameters.getExperimentParameters().getFwPool().closeTextFile();
-		parameters.getExperimentParameters().getFwBestSolution().closeTextFile();
-		
+        for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++) {
+        	// Ler o conteúdo do arquivo origem e escrever no arquivo destino        	
+        	//System.out.println(parameters.getMethodParametersI(i).getFw().getName());
+            try (BufferedReader reader = new BufferedReader(new FileReader(parameters.getMethodParametersI(i).getFw().getName()));
+                 BufferedWriter writer = new BufferedWriter(new FileWriter(filePath, true))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    writer.write(id_execution + "\t" + line);
+                    writer.newLine();
+                }
+                //System.out.println(line);
+                //System.out.println("Conteúdo do arquivo origem foi adicionado ao arquivo destino com sucesso.");
+                
+            } catch (IOException e) {
+                //System.out.println("Ocorreu um erro ao ler ou escrever nos arquivos: " + e.getMessage());
+            }
+        }
+        
+        for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++) {
+        	// Ler o conteúdo do arquivo origem e escrever no arquivo destino
+        	File arquivo = new File(parameters.getMethodParametersI(i).getFw().getName());
+        	arquivo.delete();
+			//parameters.getMethodParametersI(i).getFwReduced().closeTextFile();
+			//parameters.getMethodParametersI(i).getFwSt().closeTextFile();
+			//parameters.getMethodParametersI(i).getFwFinalTableQ().closeTextFile();
+        }
+  		
 	}
 	
 	public synchronized void notifyFinishThread(){

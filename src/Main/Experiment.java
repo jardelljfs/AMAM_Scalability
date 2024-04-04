@@ -43,7 +43,7 @@ public class Experiment {
 			this.parameters.getExperimentParameters().setNTry(n_try);
 			
 			//OUTPUT FILES
-			this.parameters.getExperimentParameters().setFwPool(new WriterInFile("results/Results" + experiment + " -" + p.getInstanceName() + "-" + n_try + "-pool.txt"));
+			this.parameters.getExperimentParameters().setFwPool(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + n_try + "-pool.txt"));
 			this.parameters.getExperimentParameters().setFwBestSolution(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + n_try + "-best_solution.txt"));
 			
 			//EXECUTION OF AGENTS
@@ -51,6 +51,9 @@ public class Experiment {
 			
 			//System.out.println("\n\nTerminou o " + n_try + "o teste!\n\n");
 		}
+		
+		parameters.getExperimentParameters().getFwBestSolution().closeTextFile();
+		parameters.getExperimentParameters().getFwPool().closeTextFile();
 	}
 
 	public Cooperation getCooperation() {

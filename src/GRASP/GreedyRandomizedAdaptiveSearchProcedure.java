@@ -15,7 +15,7 @@ import Methods.Method;
  * Copyright (C) 2013-2018 Silva, M.A.L.
  * Function: Class that defines the structure of a basic GRASP Method. Defined at run time by 
  * Design Pattern Builder.
- * @author Maria Amélia Lopes Silva <mamelia@ufv.br>
+ * @author Maria Amï¿½lia Lopes Silva <mamelia@ufv.br>
  **/
 
 public class GreedyRandomizedAdaptiveSearchProcedure extends Method{
@@ -48,8 +48,8 @@ public class GreedyRandomizedAdaptiveSearchProcedure extends Method{
 		solution_time = System.currentTimeMillis() - this.getParameters().getMethodParametersI(id_agent-1).getInitialTime();
 		//ESCREVENDO NOS ARQUIVOS
 		try {
-			this.getParameters().getMethodParametersI(id_agent-1).getFw().writeSolutionsInTextFile(this.so, solution_time, p, "INITIAL");
-			this.getParameters().getMethodParametersI(id_agent-1).getFwReduced().writeSolutionsInTextFilesReduced(this.so, solution_time, p, "INITIAL");
+			this.getParameters().getMethodParametersI(id_agent-1).getFw().writeSolutionsInTextFile(this.so, solution_time, p, this.getParameters().getExperimentParameters().getInstanceName(), this.getParameters().getExperimentParameters().getNumberOfMethods(), id_agent);
+			//this.getParameters().getMethodParametersI(id_agent-1).getFwReduced().writeSolutionsInTextFilesReduced(this.so, solution_time, p, "INITIAL");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -70,8 +70,8 @@ public class GreedyRandomizedAdaptiveSearchProcedure extends Method{
 		solution_time = System.currentTimeMillis() - this.getParameters().getMethodParametersI(id_agent-1).getInitialTime();
 		//ESCREVENDO NOS ARQUIVOS
 		try {
-			this.getParameters().getMethodParametersI(id_agent-1).getFw().writeSolutionsInTextFile(this.so, solution_time, p, "BEST");
-			this.getParameters().getMethodParametersI(id_agent-1).getFwReduced().writeSolutionsInTextFilesReduced(this.so, solution_time, p, "BEST");
+			this.getParameters().getMethodParametersI(id_agent-1).getFw().writeSolutionsInTextFile(this.so, solution_time, p, this.getParameters().getExperimentParameters().getInstanceName(), this.getParameters().getExperimentParameters().getNumberOfMethods(), id_agent);
+			//this.getParameters().getMethodParametersI(id_agent-1).getFwReduced().writeSolutionsInTextFilesReduced(this.so, solution_time, p, "BEST");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -107,8 +107,8 @@ public class GreedyRandomizedAdaptiveSearchProcedure extends Method{
 				solution_time = System.currentTimeMillis() - this.getParameters().getMethodParametersI(id_agent-1).getInitialTime();
 				//ESCREVENDO NOS ARQUIVOS
 				try {
-					this.getParameters().getMethodParametersI(id_agent-1).getFw().writeSolutionsInTextFile(this.so, solution_time, p, "BEST");
-					this.getParameters().getMethodParametersI(id_agent-1).getFwReduced().writeSolutionsInTextFilesReduced(this.so, solution_time, p, "BEST");
+					this.getParameters().getMethodParametersI(id_agent-1).getFw().writeSolutionsInTextFile(this.so, solution_time, p, this.getParameters().getExperimentParameters().getInstanceName(), this.getParameters().getExperimentParameters().getNumberOfMethods(), id_agent);
+					//this.getParameters().getMethodParametersI(id_agent-1).getFwReduced().writeSolutionsInTextFilesReduced(this.so, solution_time, p, "BEST");
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();

@@ -40,13 +40,13 @@ public class Main {
 		instance = "C101";
 		
 		//ONE AGENT -----------------------------------
-		experiment_text_file = prob + instance + "_OneAgent";
+		experiment_text_file = prob + instance + "_TwoAgent";
 		
 		//LOADS ALL PARAMETERS AND PROBLEM DATA
 		experiment = new Experiment(experiment_text_file, "");
 		
 		//RUN THE EXPERIMENT
-		experiment.runExperiment("OneAgent");
+		experiment.runExperiment("TwoAgent");
 		/*				
 		//TWO AGENTS -----------------------------------
 		experiment_text_file = prob + instance + "_TwoAgent";
