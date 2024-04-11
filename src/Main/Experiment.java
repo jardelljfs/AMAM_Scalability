@@ -33,11 +33,11 @@ public class Experiment {
 		
 	}
 	
-	public void runExperiment(String experiment) throws Exception {
+	public void runExperiment(String experiment, int n_try) throws Exception {
 		
 		ExecutionMainThread main_thread = new  ExecutionMainThread();
 		
-		for(int n_try = 0; n_try < parameters.getExperimentParameters().getExecutionsNumber(); n_try++) {
+		//for(int n_try = 0; n_try < parameters.getExperimentParameters().getExecutionsNumber(); n_try++) {
 			//INITIALIZATION
 			this.parameters.getExperimentParameters().setInitialTimeExecution(System.currentTimeMillis());
 			this.parameters.getExperimentParameters().setNTry(n_try);
@@ -50,10 +50,12 @@ public class Experiment {
 			main_thread.execute(experiment, p, this.parameters, this.cooperation, n_try);
 			
 			//System.out.println("\n\nTerminou o " + n_try + "o teste!\n\n");
-		}
+			
+			parameters.getExperimentParameters().getFwBestSolution().closeTextFile();
+			parameters.getExperimentParameters().getFwPool().closeTextFile();
+		//}
 		
-		parameters.getExperimentParameters().getFwBestSolution().closeTextFile();
-		parameters.getExperimentParameters().getFwPool().closeTextFile();
+
 	}
 
 	public Cooperation getCooperation() {

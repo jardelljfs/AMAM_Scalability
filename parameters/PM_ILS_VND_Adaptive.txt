@@ -1,0 +1,19 @@
+METHODS PARAMETERS
+
+Mth_Type: ils
+Stop_Condition_Type: iterations
+Max_time: 5
+Max_iterations: 2000
+Acceptation_Criteria_Type: fo
+Max_Levels_Perturbation: 5
+Construction_Type: greedy_random
+LS_Type: adaptive_vnd_complete
+Neighborhood_Size: 4
+Gamma: 0.9
+Alpha: 0.1
+Epsilon: 0.05
+Movements:
+1 pm_shift_inter_order
+2 pm_shift_intra
+3 pm_swap_inter
+4 pm_swap_intra

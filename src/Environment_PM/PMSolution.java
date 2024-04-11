@@ -4,10 +4,11 @@ package Environment_PM;
  * 
  * Copyright (C) 2013-2018 Silva, M.A.L.
  * Function: Specialized class for the Solution of the Parallel Machines Problem  
- * @author Maria Amélia Lopes Silva <mamelia@ufv.br>
+ * @author Maria Amï¿½lia Lopes Silva <mamelia@ufv.br>
  **/
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import Construct_PM.PMConstructElement;
 import Environment.Element;
@@ -39,7 +40,7 @@ public class PMSolution extends Solution{
 		
 	/* OVERRIDE METHODS */
 	@Override
-	/* Description: o valor da função objetivo é o tempo da máquina que conclui as tarefas
+	/* Description: o valor da funï¿½ï¿½o objetivo ï¿½ o tempo da mï¿½quina que conclui as tarefas
 	 * em maior tempo
 	 */
 	public void calculateObjectiveFunction(Problem p) {
@@ -151,18 +152,46 @@ public class PMSolution extends Solution{
 			pm = (PMProblem) p;
 		}
 		
-		fw.writerTextFile("\n\n**SOLUTION**");
+		//fw.writerTextFile("\n\n**SOLUTION**");
 		for(int i = 0; i < p.getDimension(); i++) {
-			fw.writerTextFile("Objective Function: " + this.getObjectiveFunctionI(i));
+			fw.writerTextFile("" + this.getObjectiveFunctionI(i) + "\t");
 		}
-		fw.writerTextFile("Cost Without Penalty: " + this.getCostWithoutPenalty());
-		fw.writerTextFile("Fitness Function: " + this.getFitnessFunction());
-		fw.writerTextFile("Sender:\nid: " + this.getSender().getIdSender() + " - time: " + this.getSender().getTimeSender()/1000.0 + "s");
-		fw.writerTextFile("Receiver: ");
-		for(int i = 0; i < pm.getMachinesNumber(); i++) {
-			fw.writerTextFile("\nMachine " + i);
+		fw.writerTextFile(this.getCostWithoutPenalty() + "\t" + this.getFitnessFunction() + "\t" + this.getSender().getIdSender() + "\t" + this.getSender().getTimeSender()/1000.0 + "\t");
+		
+		ArrayList<Integer> receiver = new ArrayList<Integer>();
+		ArrayList<Double> receiver_time = new ArrayList<Double>();
+		for(int i = 0; i < this.getReceiver().getSize(); i++) {
+			receiver.add(this.getReceiver().getIdReceiverI(i));
+			receiver_time.add(this.getReceiver().getTimeReceiverI(i)/1000.0);
+		}
+		fw.writerTextFile(receiver + "\t" + receiver_time + "\t");
+		
+		/*for(int i = 0; i < pm.getMachinesNumber(); i++) {
+			//fw.writerTextFile("\nMachine " + i);
 			this.machines[i].writeMachine(fw);
+		}*/
+		
+		
+		ArrayList<ArrayList<Integer>> tasks = new ArrayList<ArrayList<Integer>>();
+		ArrayList<Integer> n_tasks = new ArrayList<Integer>();
+		ArrayList<Integer> time = new ArrayList<Integer>();
+		
+		//fw.writerTextFile("\n");
+		for(int i = 0; i < this.getMachineNumber(); i++) {
+			//fw.writerTextFile("Route " + (i+1) + ": ");
+			//this.solution_vector[i].writeRoute(fw);
+			ArrayList<Integer> task = new ArrayList<Integer>();
+			for(int j = 0; j <= this.machines[i].getTasksNumber(); j++) {
+				task.add(this.machines[i].getTasksInMachine(j));
+			}
+			
+			tasks.add(task);
+			
+			n_tasks.add(this.machines[i].getTasksNumber());
+			time.add(this.machines[i].getTotalTime());
+			//fw.writerNewLine();
 		}
+		fw.writerTextFile(tasks + "\t" + n_tasks + "\t" + time + "\t");
 	}
 
 	@Override
@@ -196,7 +225,7 @@ public class PMSolution extends Solution{
 		fw.writerTextFile(this.getSearchTime()/1000.0 + "");
 	}
 
-	//Insere no final da lista de tarefas da máquina
+	//Insere no final da lista de tarefas da mï¿½quina
 	public void insertTaskInSolutionInLast(int task, int machine, Problem p) {
 		
 		PMProblem pm = null;
@@ -249,7 +278,7 @@ public class PMSolution extends Solution{
 		while(i > position){
 			i--;
 			if(i == -1)
-				System.out.println("Teste é");
+				System.out.println("Teste ï¿½");
 			this.machines[machine].setTasksInMachine(this.machines[machine].getTasksInMachine(i), i+1);
 		}
 		this.machines[machine].setTasksInMachine(task, i);
@@ -766,7 +795,7 @@ public class PMSolution extends Solution{
 		for(int i = 0; i < k; i++) {
 			int machine, position;
 			machine = (int)(Math.random() * sol.getMachineNumber());
-			//System.out.println("\nNúmero: "+ sol.getMachineI(machine).getTasksNumber());
+			//System.out.println("\nNï¿½mero: "+ sol.getMachineI(machine).getTasksNumber());
 			while (sol.getMachineI(machine).getTasksNumber() == 0) {
 				machine = (int)(Math.random() * sol.getMachineNumber());
 			}
@@ -814,7 +843,7 @@ public class PMSolution extends Solution{
 	    			inserted = 1;
 	    		}
 	    		else {
-	    			//insere o maior custo já ordenado nas lista tasks_cost_removed
+	    			//insere o maior custo jï¿½ ordenado nas lista tasks_cost_removed
 	    			for(int m = 0; m <= l; m++) {
 	    				if(task_cost > tasks_cost_removed[m]) {
 	    					for(int n = k-1; n > m; n--) {
@@ -889,7 +918,7 @@ public class PMSolution extends Solution{
 	    			inserted = 1;
 	    		}
 	    		else {
-	    			//insere o maior custo já ordenado nas lista tasks_cost_removed
+	    			//insere o maior custo jï¿½ ordenado nas lista tasks_cost_removed
 	    			for(int m = 0; m <= l; m++) {
 	    				if(task_cost > cost[m]) {
 	    					for(int n = q-1; n > m; n--) {

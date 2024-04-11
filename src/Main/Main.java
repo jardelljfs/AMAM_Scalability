@@ -31,13 +31,18 @@ public class Main {
 		String prob;
 		String experiment_text_file;
 		Experiment experiment;
-		prob = "VRP_";
+		//prob = "PM_";
 		
-		System.out.println("Executando...");
+		prob = args[3];
+		
+		//System.out.println("Executando...");
 		
 		//------------------VRP-------------------
 		
-		instance = "C101";
+		instance = args[0];
+		/*instance = "I_50_10_S_1-9_1";
+		 * 
+		
 		
 		//ONE AGENT -----------------------------------
 		experiment_text_file = prob + instance + "_TwoAgent";
@@ -46,35 +51,18 @@ public class Main {
 		experiment = new Experiment(experiment_text_file, "");
 		
 		//RUN THE EXPERIMENT
-		experiment.runExperiment("TwoAgent");
-		/*				
-		//TWO AGENTS -----------------------------------
-		experiment_text_file = prob + instance + "_TwoAgent";
+		experiment.runExperiment(prob + "TwoAgent", 2);
+		experiment.runExperiment(prob + "TwoAgent", 3);*/
 		
+		
+		experiment_text_file = prob + instance + "_" + args[1];
+				
 		//LOADS ALL PARAMETERS AND PROBLEM DATA
 		experiment = new Experiment(experiment_text_file, "");
-		
+				
 		//RUN THE EXPERIMENT
-		experiment.runExperiment("TwoAgents");
+		experiment.runExperiment(prob + args[1], Integer.parseInt(args[2]));
 		
-		//FOUR AGENTS -----------------------------------
-		experiment_text_file = prob + instance + "_FourAgent";
-		
-		//LOADS ALL PARAMETERS AND PROBLEM DATA
-		experiment = new Experiment(experiment_text_file, "");
-		
-		//RUN THE EXPERIMENT
-		experiment.runExperiment("FourAgents");
-
-		//EIGHT AGENTS -----------------------------------
-		experiment_text_file = prob + instance + "_EightAgent";
-		
-		//LOADS ALL PARAMETERS AND PROBLEM DATA
-		experiment = new Experiment(experiment_text_file, "");
-		
-		//RUN THE EXPERIMENT
-		experiment.runExperiment("EightAgents");*/
-		
-		System.out.println("\n\nEND EXPERIMENT!");	
+		//System.out.println("\n\nEND EXPERIMENT!");	
 	}
 }

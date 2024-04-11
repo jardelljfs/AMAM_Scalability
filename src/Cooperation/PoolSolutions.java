@@ -330,14 +330,14 @@ public abstract class PoolSolutions extends CollectionSolutions {
 		}
 	}
 	
-	public synchronized void writePoolSolutions(Problem p, WriterInFile fw, String instance, int agent) throws IOException
+	public synchronized void writePoolSolutions(Problem p, WriterInFile fw, String instance, int agent, int id_execution) throws IOException
 	{
 		//fw.writerTextFile("\n\n\nPOOL SOLUTIONS");
 		//fw.writerTextFile("\n\nTAMANHO: " + this.getSize() + "\n");
 		
 		for(int i = 0; i < this.getSize(); i++)
 		{
-			fw.writerTextFile(instance + "\t" + agent + "\t");
+			fw.writerTextFile(instance + "\t" + id_execution + "\t" + agent + "\t");
 			this.getSolutionInCollection(i).writeSolution(p, fw);
 			fw.writerTextFile("\n");
 		}

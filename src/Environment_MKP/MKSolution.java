@@ -4,7 +4,7 @@ package Environment_MKP;
  * 
  * Copyright (C) 2013-2018 Silva, M.A.L.
  * Function: Specialized class for the Solution of the Multi-objective Backpack Problem  
- * @author Maria Amélia Lopes Silva <mamelia@ufv.br>
+ * @author Maria Amï¿½lia Lopes Silva <mamelia@ufv.br>
  **/
 
 import java.io.IOException;
@@ -56,7 +56,7 @@ public class MKSolution extends Solution{
 			}
 		}
 		/*else*/
-		/*INCLUIR OS OUTRAS VARIAÇÕES DO PROBLEMA DA MOCHILA*/
+		/*INCLUIR OS OUTRAS VARIAï¿½ï¿½ES DO PROBLEMA DA MOCHILA*/
 		
 	}
 
@@ -127,18 +127,18 @@ public class MKSolution extends Solution{
 	}
 
 
-	@Override
-	public void writeSolution(Problem p, WriterInFile fw) throws IOException {
+	//@Override
+	/*public void writeSolution(Problem p, WriterInFile fw, 0) throws IOException {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 
-	@Override
+	/*@Override
 	public void writeReduceSolution(Problem p, WriterInFile fw)
 			throws IOException {
 		// TODO Auto-generated method stub
 		
-	}
+	}*/
 	
 	/*MOVEMENTS*/
 	
@@ -209,7 +209,7 @@ public class MKSolution extends Solution{
 		//n restrictions
 		for(int j = 0; j < p.getDimension(); j++) {
 			if(this.knapsacks[0].getTotalWeightI(j) > mkp.getCapacity(j)) {				
-				//System.out.println("\n\nSolução viola a restrição de capacidade da dimensão " + j + "!");
+				//System.out.println("\n\nSoluï¿½ï¿½o viola a restriï¿½ï¿½o de capacidade da dimensï¿½o " + j + "!");
 				valid = false;
 			}
 		}
@@ -241,7 +241,7 @@ public class MKSolution extends Solution{
 		//n restrictions
 		for(int l = 0; l < p.getDimension(); l++) {
 			if(this.knapsacks[0].getTotalWeightI(l) > mkp.getCapacity(l)) {				
-				//System.out.println("\n\nSolução viola a restrição de capacidade da dimensão " + l + "!");
+				//System.out.println("\n\nSoluï¿½ï¿½o viola a restriï¿½ï¿½o de capacidade da dimensï¿½o " + l + "!");
 				valid = false;
 			}
 		}
@@ -260,6 +260,18 @@ public class MKSolution extends Solution{
 
 	@Override
 	public void writeSolutionST(Problem p, WriterInFile fw) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void writeSolution(Problem p, WriterInFile fw) throws IOException {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void writeReduceSolution(Problem p, WriterInFile fw) throws IOException {
 		// TODO Auto-generated method stub
 		
 	}

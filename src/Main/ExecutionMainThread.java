@@ -41,7 +41,7 @@ public class ExecutionMainThread {
                 
         for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++){
         	//OUTPUT FILES
-			parameters.getMethodParametersI(i).setFw(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + ".txt"));
+			parameters.getMethodParametersI(i).setFw(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + id_execution + "-" + i + ".txt"));
 			//parameters.getMethodParametersI(i).setFwReduced(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + "-reduced.txt"));
 			//parameters.getMethodParametersI(i).setFwST(new WriterInFile("results/Results" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + "-ST.txt"));
 			//parameters.getMethodParametersI(i).setFwFinalTableQ(new WriterInFile("results/TableFinalQ" + experiment + "-" + p.getInstanceName() + "-" + id_execution + i + ".txt"));
@@ -80,6 +80,7 @@ public class ExecutionMainThread {
         		}
         	}
         }
+       
         
         this.final_solution.writeSolution(p, parameters.getExperimentParameters().getFwBestSolution());
         //this.final_solution.writeSolutionST(p, parameters.getExperimentParameters().getFwBestSolution());
@@ -89,23 +90,13 @@ public class ExecutionMainThread {
         //parameters.getExperimentParameters().getFwBestSolution().writerTextFile(this.final_solution.getSearchTime()/1000.0 + "");
         
         try {
-			cooperation.getPool().writePoolSolutions(p, parameters.getExperimentParameters().getFwPool(), parameters.getExperimentParameters().getInstanceName(), parameters.getExperimentParameters().getNumberOfMethods());
+			cooperation.getPool().writePoolSolutions(p, parameters.getExperimentParameters().getFwPool(), parameters.getExperimentParameters().getInstanceName(), parameters.getExperimentParameters().getNumberOfMethods(), id_execution);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
         
-        String filePath = "results/Results.txt";
         
-        // Verificar se o arquivo já existe
-        File file = new File(filePath);
-        if (!file.exists()) {
-        	try {
-                // Criar o arquivo se ele não existir
-                file.createNewFile();
-            } catch (IOException e) {
-            }
-        }
         
         for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++) {
         	// Ler o conteúdo do arquivo origem e escrever no arquivo destino
@@ -115,7 +106,21 @@ public class ExecutionMainThread {
 			//parameters.getMethodParametersI(i).getFwFinalTableQ().closeTextFile();
         }
         
-        for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++) {
+        //União dos arquivos
+        
+        /*String filePath = "results/Results.txt";
+        
+        // Verificar se o arquivo já existe
+        File file = new File(filePath);
+        if (!file.exists()) {
+        	try {
+                // Criar o arquivo se ele não existir
+                file.createNewFile();
+            } catch (IOException e) {
+            }
+        }*/
+        
+       /* for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++) {
         	// Ler o conteúdo do arquivo origem e escrever no arquivo destino        	
         	//System.out.println(parameters.getMethodParametersI(i).getFw().getName());
             try (BufferedReader reader = new BufferedReader(new FileReader(parameters.getMethodParametersI(i).getFw().getName()));
@@ -131,16 +136,16 @@ public class ExecutionMainThread {
             } catch (IOException e) {
                 //System.out.println("Ocorreu um erro ao ler ou escrever nos arquivos: " + e.getMessage());
             }
-        }
+        }*/
         
-        for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++) {
+        /*for(int i = 0; i < parameters.getExperimentParameters().getNumberOfMethods(); i++) {
         	// Ler o conteúdo do arquivo origem e escrever no arquivo destino
         	File arquivo = new File(parameters.getMethodParametersI(i).getFw().getName());
         	arquivo.delete();
 			//parameters.getMethodParametersI(i).getFwReduced().closeTextFile();
 			//parameters.getMethodParametersI(i).getFwSt().closeTextFile();
 			//parameters.getMethodParametersI(i).getFwFinalTableQ().closeTextFile();
-        }
+        }*/
   		
 	}
 	

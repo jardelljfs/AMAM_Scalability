@@ -4,7 +4,7 @@ package Environment_PM;
  * 
  * Copyright (C) 2013-2018 Silva, M.A.L.
  * Function: Specialized class for the Parallel Machines Problem  
- * @author Maria Amélia Lopes Silva <mamelia@ufv.br>
+ * @author Maria Amï¿½lia Lopes Silva <mamelia@ufv.br>
  **/
 
 import java.io.BufferedReader;
@@ -37,7 +37,7 @@ public class PMProblem extends Problem{
 		int aux;
 		
 		this.setInstanceName(instance);
-		FileReader file = new FileReader(this.getInstanceName() + ".txt");
+		FileReader file = new FileReader("instances/" + this.getInstanceName() + ".txt");
 		BufferedReader buffer = new BufferedReader(file);
 		
 		//System.out.println("**PM Problem**");
@@ -143,7 +143,7 @@ public class PMProblem extends Problem{
 		
 				System.out.println("\nSetup Time: ");
 		for(int i = 0; i < this.machines_number; i++) {
-			System.out.println("Máquina " + i + ": ");
+			System.out.println("Mï¿½quina " + i + ": ");
 			this.setup_time[i].showSetupTime(this.getNumberOfTasks());
 		}
 	}

@@ -1,0 +1,28 @@
+EXPERIMENT PARAMETERS
+
+Instance: I_100_10_S_1-99_1
+Best_OF: 212
+Best_Routes: 0
+Problem_Description: pmp
+Problem_Dimension: 1
+Problem_Type:
+1 min
+Gama_MO: -
+Executions_Number: 1
+Number_Of_Methods: 10
+Method_Parameters_Files:
+1 PM_ILS_VND_Adaptive
+2 PM_ILS_VND_Adaptive
+3 PM_ILS_VND_Adaptive
+4 PM_ILS_VND_Adaptive
+5 PM_ILS_VND_Adaptive
+6 PM_ILS_VND_Adaptive
+7 PM_ILS_VND_Adaptive
+8 PM_ILS_VND_Adaptive
+9 PM_ILS_VND_Adaptive
+10 PM_ILS_VND_Adaptive
+Cooperation
+Type: pool
+Receiver_Size: 10
+Radius_Niche: 10
+Max_Size_Pool: 50
