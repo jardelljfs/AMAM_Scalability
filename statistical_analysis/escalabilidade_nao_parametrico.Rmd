@@ -1,0 +1,227 @@
+---
+#title: "Escalabilidade_não_paramétrico"
+#author: "Jardell"
+#date: "02/09/2021"
+output:
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(lmtest)
+library(ggplot2)
+require(ggplot2)
+require(reshape2)
+#instance <- "RC208";
+```
+
+
+```{r read, echo=FALSE}
+melhor <- read.delim("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/melhor_total");
+melhor <- data.frame(melhor, results = melhor$n * 1000 + melhor$fo);
+
+dados <- data.frame(instance= character(),
+                    bloco=character(),
+                    tratamento=character(),
+                    results = double(),
+                    time = double())
+
+dados_time <-data.frame(one = double(),
+                  two = double(),
+                  four = double(),
+                  eight = double(),
+                  ten = double(),
+                  twenty = double(),
+                  thirty = double(),
+                  forty = double(),
+                  fifty = double(),
+                  sixty = double())
+
+for(instance in melhor$instancia){
+  
+  d_1 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-OneAgent-30-",instance,"-.txt", sep = ""))
+  d_2 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-TwoAgent-30-",instance,"-.txt", sep = ""))
+  d_4 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-FourAgent-30-",instance,"-.txt", sep = ""))
+  d_8 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-EightAgent-30-",instance,"-.txt", sep = ""))
+  d_10 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-TenAgent-30-",instance,"-.txt", sep = ""))
+  d_20 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-TwentyAgent-30-",instance,"-.txt", sep = ""))
+  d_30 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-ThirtyAgent-30-",instance,"-.txt", sep = ""))
+  d_40 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-FortyAgent-30-",instance,"-.txt", sep = ""))
+  d_50 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-FiftyAgent-30-",instance,"-.txt", sep = ""))
+  d_60 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-SixtyAgent-30-",instance,"-.txt", sep = ""))
+
+  d_1 <- data.frame(d_1, results = d_1$n * 1000 + d_1$fo)
+  d_2 <- data.frame(d_2, results = d_2$n * 1000 + d_2$fo)
+  d_4 <- data.frame(d_4, results = d_4$n * 1000 + d_4$fo)
+  d_8 <- data.frame(d_8, results = d_8$n * 1000 + d_8$fo)
+  d_10 <- data.frame(d_10, results = d_10$n * 1000 + d_10$fo)
+  d_20 <- data.frame(d_20, results = d_20$n * 1000 + d_20$fo)
+  d_30 <- data.frame(d_30, results = d_30$n * 1000 + d_30$fo)
+  d_40 <- data.frame(d_40, results = d_40$n * 1000 + d_40$fo)
+  d_50 <- data.frame(d_50, results = d_50$n * 1000 + d_50$fo)
+  d_60 <- data.frame(d_60, results = d_60$n * 1000 + d_60$fo)
+  
+    dados2 <-data.frame(one = d_1$results,
+                  two = d_2$results,
+                  four = d_4$results,
+                  eight = d_8$results,
+                  ten = d_10$results,
+                  twenty = d_20$results,
+                  thirty = d_30$results,
+                  forty = d_40$results,
+                  fifty = d_50$results,
+                  sixty = d_60$results)
+    dados3 <-data.frame(one = d_1$time,
+                  two = d_2$time,
+                  four = d_4$time,
+                  eight = d_8$time,
+                  ten = d_10$time,
+                  twenty = d_20$time,
+                  thirty = d_30$time,
+                  forty = d_40$time,
+                  fifty = d_50$time,
+                  sixty = d_60$time)
+ 
+    
+  aux <- data.frame(instance = instance,
+                    bloco= melhor[melhor$instancia == instance, 4],
+                    tratamento = rep(01),
+                    results = d_1$results,
+                    time = d_1$time);
+  dados <- rbind.data.frame(dados,aux);
+  aux <- data.frame(instance = instance,
+                    bloco= melhor[melhor$instancia == instance, 4],
+                    tratamento = rep(02),
+                    results = d_2$results,
+                    time = d_2$time);
+  dados <- rbind.data.frame(dados,aux);
+  aux <- data.frame(instance = instance,
+                    bloco= melhor[melhor$instancia == instance, 4],
+                    tratamento = rep(04),
+                    results = d_4$results,
+                    time = d_4$time);
+  dados <- rbind.data.frame(dados,aux);
+    aux <- data.frame(instance = instance,
+                    bloco= melhor[melhor$instancia == instance, 4],
+                    tratamento = rep(08),
+                    results = d_8$results,
+                    time = d_8$time);
+  dados <- rbind.data.frame(dados,aux);
+  aux <- data.frame(instance = instance,
+                    bloco= melhor[melhor$instancia == instance, 4],
+                    tratamento = rep(10),
+                    results = d_10$results,
+                    time = d_10$time);
+  dados <- rbind.data.frame(dados,aux);
+    aux <- data.frame(instance = instance,
+                    bloco= melhor[melhor$instancia == instance, 4],
+                    tratamento = rep(20),
+                    results = d_20$results,
+                    time = d_20$time);
+  dados <- rbind.data.frame(dados,aux);
+    aux <- data.frame(instance = instance,
+                    bloco= melhor[melhor$instancia == instance, 4],
+                    tratamento = rep(30),
+                    results = d_30$results,
+                    time = d_30$time);
+  dados <- rbind.data.frame(dados,aux);
+    aux <- data.frame(instance = instance,
+                    bloco= melhor[melhor$instancia == instance, 4],
+                    tratamento = rep(40),
+                    results = d_40$results,
+                    time = d_40$time);
+  dados <- rbind.data.frame(dados,aux);
+    aux <- data.frame(instance = instance,
+                    bloco= melhor[melhor$instancia == instance, 4],
+                    tratamento = rep(50),
+                    results = d_50$results,
+                    time = d_50$time);
+  dados <- rbind.data.frame(dados,aux);
+    aux <- data.frame(instance = instance,
+                    bloco= melhor[melhor$instancia == instance, 4],
+                    tratamento = rep(60),
+                    results = d_60$results,
+                    time = d_60$time);
+  dados <- rbind.data.frame(dados,aux);
+  dados_t <-data.frame(one = mean(d_1$time),
+                  two = mean(d_2$time),
+                  four = mean(d_4$time),
+                  eight = mean(d_8$time),
+                  ten = mean(d_10$time),
+                  twenty = mean(d_20$time),
+                  thirty = mean(d_30$time),
+                  forty = mean(d_40$time),
+                  fifty = mean(d_50$time),
+                  sixty = mean(d_60$time));
+  dados_time <- rbind.data.frame(dados_time, dados_t)
+}
+
+
+#boxplot(dados_time)
+#nts.default(1,mean(dados_time$one),col = "red", pch = 19)
+#points.default(2,mean(dados_time$two),col = "red", pch = 19)
+#oints.default(3,mean(dados_time$four),col = "red", pch = 19)
+#oints.default(4,mean(dados_time$eight),col = "red", pch = 19)
+#points.default(5,mean(dados_time$ten),col = "red", pch = 19)
+#points.default(6,mean(dados_time$twenty),col = "red", pch = 19)
+#points.default(7,mean(dados_time$thirty),col = "red", pch = 19)
+#points.default(8,mean(dados_time$forty),col = "red", pch = 19)
+#points.default(9,mean(dados_time$fifty),col = "red", pch = 19)
+#points.default(10,mean(dados_time$sixty),col = "red", pch = 19)
+#legend("topright",inset=c(0,-0.05), legend = c("Média tempo agente"), col=c("red"), pch = 19, xpd=TRUE, horiz=TRUE, bty="n")
+
+#tb_mean <- c(mean(dados_time$one),mean(dados_time$two),mean(dados_time$four),mean(dados_time$eight),mean(dados_time$ten),mean(dados_time$twenty),mean(dados_time$thirty),mean(dados_time$forty),mean(dados_time$fifty),mean(dados_time$sixty))
+#tb_med <- c(median(dados_time$one),median(dados_time$two),median(dados_time$four),median(dados_time$eight),median(dados_time$ten),median(dados_time$twenty),median(dados_time$thirty),median(dados_time$forty),median(dados_time$fifty),median(dados_time$sixty))
+#tb_max <- c(max(dados_time$one),max(dados_time$two),max(dados_time$four),max(dados_time$eight),max(dados_time$ten),max(dados_time$twenty),max(dados_time$thirty),max(dados_time$forty),max(dados_time$fifty),max(dados_time$sixty))
+
+#df1 <- data.frame(quantidade_agentes = c(1,2,4,8,10,20,30,40,50,60),
+#                media = tb_mean,
+#                med = tb_med,
+#                max = tb_max)
+
+#df <- melt(df1 ,  id.vars = 'quantidade_agentes', variable.name = 'legenda')
+
+#plot(df$quantidade_agente,df$value, col = df$legenda, pch = c(rep(19,10),rep(15,10),rep(17,10)), main = "Numero de agentes x Tempo Médio", ylab = "Tempo Computacional", xlab = "Quantidade de Agentes", xaxt = 'n');
+#axis(side=1, at=seq(0,60,10))
+#axis(side=1, at=seq(1,1,1))
+#axis(side=1, at=seq(2,2,1))
+#axis(side=1, at=seq(4,4,1))
+#axis(side=1, at=seq(8,8,1))
+#legend("topright",inset=c(0,-0.04), col=c("black", "red", "green"), pch = c(19,15,17), legend = c("Média","Mediana","Máximo"), xpd=TRUE, horiz=TRUE, bty="n")
+
+#modelo <- lm(data = df1, formula = df1$media ~ df1$quantidade_agentes)
+
+#modelo$coefficients
+
+#summary(modelo)
+
+#ggplot(df1, aes(x=df1$quantidade_agentes, y=df1$media)) + geom_point() + geom_smooth(method = lm, se = FALSE)
+
+#modelo <- lm(data = df1, formula = df1$med ~ df1$quantidade_agentes)
+
+#modelo$coefficients
+
+#summary(modelo)
+
+#ggplot(df1, aes(x=df1$quantidade_agentes, y=df1$med)) + geom_point() + geom_smooth(method = lm, se = FALSE)
+
+#modelo <- lm(data = df1, formula = df1$max ~ df1$quantidade_agentes)
+
+#modelo$coefficients
+
+#summary(modelo)
+
+#ggplot(df1, aes(x=df1$quantidade_agentes, y=df1$max)) + geom_point() + geom_smooth(method = lm, se = FALSE)
+show("Teste estatístico Função Objetivo")
+kruskal.test(dados$results ~ dados$tratamento)
+pairwise.wilcox.test(dados$results, dados$tratamento, paired=T, p.adjust.method="bonferroni",alternative="less")
+pairwise.wilcox.test(dados$results, dados$tratamento, paired=T, p.adjust.method="bonferroni",alternative="greater")
+
+
+show("Teste estatístico Tempo Computacional")
+kruskal.test(dados$time ~ dados$tratamento)
+pairwise.wilcox.test(dados$time, dados$tratamento, paired=T, p.adjust.method="bonferroni", alternative="less")
+pairwise.wilcox.test(dados$time, dados$tratamento, paired=T, p.adjust.method="bonferroni", alternative="greater")
+```

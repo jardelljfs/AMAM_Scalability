@@ -1,0 +1,151 @@
+---
+title: "1_60"
+author: "Jardell"
+date: "06/10/2021"
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(lmtest)
+```
+
+## Validação do sistema multiagente.
+
+Foram realizados os seguintes testes: 
+
+30 execuções do Framework com 60 agentes (1800 agentes)
+1800 execuções do Framework com 1 agente (1800 agentes)
+
+```{r, echo=FALSE}
+melhor <- read.delim("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/total_1_60");
+
+anova <- data.frame(instance= character(),
+                    #bloco=character(),
+                    tratamento=character(),
+                    results = double(),
+                    tempo = double());
+
+for(instance in melhor$instancia){
+#instance <- "R201"
+  d_1 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-OneAgent-1800-",instance,"-.txt", sep = "")) 
+  d_60 <- read.delim(paste("/home/jardell/Documentos/DOUTORADO/Planejamento_de_Experimentos/Trabalho_Final/results_final/Results_BestSolutionNTry-SixtyAgent-30-",instance,"-.txt", sep = ""))
+  d_1 <- data.frame(d_1, results = d_1$n * 1000 + d_1$fo)
+  d_60 <- data.frame(d_60, results = d_60$n * 1000 + d_60$fo)
+  # auxnew <- double();
+  # auxnewtime <- double();
+  # for(j in 0:29){
+  #   auxnew2 <- double();
+  #   auxnewtime2 <- double();
+  #   for(k in 1:60){
+  #     auxnew2 <- c(auxnew2, d_1$results[j * 60 + k]);
+  #     auxnewtime2 <-  c(auxnewtime2, d_1$time[j * 60 + k]);
+  #     #print(j * 60  + k )
+  #     #print(auxnew2);
+  #   }
+  #   auxnew <- c(auxnew, max(auxnew2));
+  #   auxnewtime <- c(auxnewtime, max(auxnewtime2));
+  #   #print(auxnew2);
+  #   #print(auxnew);
+  # }
+  #   aux <- data.frame(instance = rep(instance, 30),
+  #                   #bloco= rep(melhor[melhor$instancia == instance, 4],1800),
+  #                   tratamento = rep("one", 30),
+  #                   results = auxnew,
+  #                   tempo = auxnewtime);
+  #   anova <- rbind.data.frame(anova,aux);
+  #   aux <- data.frame(instance = rep(instance, 30),
+  #                   #bloco= rep(melhor[melhor$instancia == instance, 4],30),
+  #                   tratamento = rep("sixty", 30),
+  #                   results = d_60$results,
+  #                   tempo = d_60$time);
+  #   anova <- rbind.data.frame(anova,aux);
+  
+ aux <- data.frame(instance = rep(instance, 1800),
+                   #bloco= rep(melhor[melhor$instancia == instance, 4],1800),
+                   tratamento = rep("one", 1800),
+                   results = d_1$results,
+                   tempo = d_1$time);
+ anova <- rbind.data.frame(anova,aux);
+ aux <- data.frame(instance = rep(instance, 30),
+                  #bloco= rep(melhor[melhor$instancia == instance, 4],30),
+                   tratamento = rep("sixty", 30),
+                   results = d_60$results,
+                   tempo = d_60$time);
+ anova <- rbind.data.frame(anova,aux);
+  
+  #boxplot(d_1$results, d_60$results)
+  #title(instance)
+  #boxplot(d_1$time, d_60$time)
+  #title(instance)
+  #print(sum(d_1$time))
+  #print(mean(d_1$time))
+  #print(sum(d_60$time))
+  #print(mean(d_60$time))
+}
+#pairwise.wilcox.test(dados$results, dados$tratamento, paired=T, p.adjust.method="bonferroni", alternative="less")
+```
+
+## Resultados em relação a Função objetivo.
+
+Inicialmente foi realizado um teste não paramêtrico, pois os resultados não atinge as premissas necessárias para o teste paramêtrico. Logo após são apresentados os resultados para o teste paramêtrico. 
+
+```{r, echo=FALSE}
+kruskal.test(anova$results ~ anova$tratamento)
+#pairwise.wilcox.test(anova$results, anova$tratamento, paired=T, p.adjust.method="bonferroni",  alternative = "less")
+#wilcox.test(anova$results ~ anova$tratamento, paired = TRUE, alternative = "greater")
+model <- aov(results ~ tratamento, data = anova);
+model
+summary(model)
+```
+
+```{r, echo=FALSE }
+#par(mfrow=c(2,2))
+#plot(model, which=c(1:4), pch = 20)
+
+#bartlett.test(data = anova, results ~ tratamento)
+
+dwtest(model)
+
+fligner.test (results ~ tratamento, data = anova)
+
+#shapiro.test(resid(model))
+qqnorm(resid(model))
+qqline(resid(model))
+
+TukeyHSD(model)
+```
+
+## Resultados em relação ao tempo.
+
+Inicialmente foi realizado um teste não paramêtrico, pois os resultados não atinge as premissas necessárias para o teste paramêtrico. Logo após são apresentados os resultados para o teste paramêtrico.
+
+```{r, echo=FALSE }
+kruskal.test(anova$tempo ~ anova$tratamento)
+#pairwise.wilcox.test(anova$tempo, anova$tratamento, paired=T, p.adjust.method="bonferroni",  alternative = "less")
+#wilcox.test(anova$tempo ~ anova$tratamento, paired = TRUE)
+modelt <- aov(tempo ~ tratamento, data = anova);
+modelt
+summary(modelt)
+```
+
+```{r, echo=FALSE }
+
+dwtest(modelt)
+
+fligner.test (tempo ~ tratamento, data = anova)
+
+#shapiro.test(resid(model))
+qqnorm(resid(modelt))
+qqline(resid(modelt))
+
+TukeyHSD(modelt)
+```
+
+## Observações e Dúvidas.
+
+Na realização dos testes paramêtricos não foi possivel verificar 1 a 1 pois o tamanho da amostra é diferente. Como posso verificar qual é melhor? Gráfico? Teria um teste melhor pra fazer 2 a 2 não paramêtrico do que o teste de Kruskal Wallis?
+
+Nos paramêtricos, as premissas invibializam a realização do teste t?
