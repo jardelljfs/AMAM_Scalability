@@ -3,7 +3,7 @@ library(ggplot2)
 library(magrittr)
 
 #melhor <- read.delim("/home/jardell/Documentos/artigo_escalabilidade/melhor_c");
-melhor <- read.delim("/home/jardell/Documentos/artigo_escalabilidade/melhor_total");
+melhor <- read.delim("melhor_total.txt");
 melhor <- data.frame(melhor, results = melhor$n * 1000 + melhor$fo);
 
 #------------1800 x 1800 ------------------
@@ -50,7 +50,7 @@ d_60_1800 <- data.frame(instancia = character(),
 
 for(instance in melhor$instancia){
   for(i in 0:59){
-    linha <- read.delim(header = FALSE, col.names = c("fo",	"n",	"time"), paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_NTry-SixtyAgent-30-",instance,"-",i,".txt", sep = ""))
+    linha <- read.delim(header = FALSE, col.names = c("fo",	"n",	"time"), paste("results_final/Results_NTry-SixtyAgent-30-",instance,"-",i,".txt", sep = ""))
     linha <- data.frame(linha, results = linha$n * 1000 + linha$fo)
     linha <- data.frame(linha, instancia = rep(instance,30))
     linha <- data.frame(linha, tratamento = rep("sixty",30))
@@ -58,8 +58,7 @@ for(instance in melhor$instancia){
     d_60_1800 <- rbind(d_60_1800, linha)
   }
   
-  
-  d_1 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-OneAgent-1800-",instance,"-.txt", sep = ""))
+  d_1 <- read.delim(paste("results_final/Results_BestSolutionNTry-OneAgent-1800-",instance,"-.txt", sep = ""))
   d_1 <- data.frame(d_1, results = d_1$n * 1000 + d_1$fo)
   d_1 <- data.frame(d_1, instancia = rep(instance,1800))
   d_1 <- data.frame(d_1, tratamento = rep("one",1800))
@@ -78,7 +77,7 @@ for(instance in melhor$instancia){
   
   d_1_1800 <- rbind(d_1_1800, d_1)
   
-  d_60 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-SixtyAgent-30-",instance,"-.txt", sep = ""))
+  d_60 <- read.delim(paste("results_final/Results_BestSolutionNTry-SixtyAgent-30-",instance,"-.txt", sep = ""))
   d_60 <- data.frame(d_60, results = d_60$n * 1000 + d_60$fo)
   d_60 <- data.frame(d_60, instancia = rep(instance,30))
   d_60 <- data.frame(d_60, tratamento = rep("sixty",30))

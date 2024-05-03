@@ -1,7 +1,7 @@
 EXPERIMENT PARAMETERS
 
 Instance: I_50_20_S_1-99_1
-Best_OF: 67
+Best_OF: 49
 Best_Routes: 0
 Problem_Description: pmp
 Problem_Dimension: 1

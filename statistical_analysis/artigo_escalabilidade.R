@@ -4,12 +4,12 @@ library(lmtest)
 require(ggplot2)
 require(reshape2)
 
-melhor <- read.delim("/home/jardell/Documentos/artigo_escalabilidade/melhor_total");
-melhor <- data.frame(melhor, results = melhor$n * 1000 + melhor$fo);
+rm(list = ls(all = TRUE))
 
-#one = melhor
-#one_m = media
-#one_md = mediana
+setwd(getwd())
+
+melhor <- read.delim("melhor_total.txt");
+melhor <- data.frame(melhor, results = melhor$n * 1000 + melhor$fo);
 
 results <- data.frame(instance= character(), 
                       literatura = double(),
@@ -27,18 +27,16 @@ results <- data.frame(instance= character(),
 
 for(instance in melhor$instancia){
   
-  #instance <- "R108";
-  
-  d_1 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-OneAgent-30-",instance,"-.txt", sep = ""))
-  d_2 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-TwoAgent-30-",instance,"-.txt", sep = ""))
-  d_4 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-FourAgent-30-",instance,"-.txt", sep = ""))
-  d_8 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-EightAgent-30-",instance,"-.txt", sep = ""))
-  d_10 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-TenAgent-30-",instance,"-.txt", sep = ""))
-  d_20 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-TwentyAgent-30-",instance,"-.txt", sep = ""))
-  d_30 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-ThirtyAgent-30-",instance,"-.txt", sep = ""))
-  d_40 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-FortyAgent-30-",instance,"-.txt", sep = ""))
-  d_50 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-FiftyAgent-30-",instance,"-.txt", sep = ""))
-  d_60 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-SixtyAgent-30-",instance,"-.txt", sep = ""))
+  d_1 <- read.delim(paste("results_final/Results_BestSolutionNTry-OneAgent-30-",instance,"-.txt", sep = ""))
+  d_2 <- read.delim(paste("results_final/Results_BestSolutionNTry-TwoAgent-30-",instance,"-.txt", sep = ""))
+  d_4 <- read.delim(paste("results_final/Results_BestSolutionNTry-FourAgent-30-",instance,"-.txt", sep = ""))
+  d_8 <- read.delim(paste("results_final/Results_BestSolutionNTry-EightAgent-30-",instance,"-.txt", sep = ""))
+  d_10 <- read.delim(paste("results_final/Results_BestSolutionNTry-TenAgent-30-",instance,"-.txt", sep = ""))
+  d_20 <- read.delim(paste("results_final/Results_BestSolutionNTry-TwentyAgent-30-",instance,"-.txt", sep = ""))
+  d_30 <- read.delim(paste("results_final/Results_BestSolutionNTry-ThirtyAgent-30-",instance,"-.txt", sep = ""))
+  d_40 <- read.delim(paste("results_final/Results_BestSolutionNTry-FortyAgent-30-",instance,"-.txt", sep = ""))
+  d_50 <- read.delim(paste("results_final/Results_BestSolutionNTry-FiftyAgent-30-",instance,"-.txt", sep = ""))
+  d_60 <- read.delim(paste("results_final/Results_BestSolutionNTry-SixtyAgent-30-",instance,"-.txt", sep = ""))
   
   d_1 <- data.frame(d_1, results = d_1$n * 1000 + d_1$fo)
   d_2 <- data.frame(d_2, results = d_2$n * 1000 + d_2$fo)
@@ -67,7 +65,6 @@ for(instance in melhor$instancia){
                       two_md_time = median(d_2$time),
                       two_time = min(d_2$time),
                       
-                      
                       four = if (min(d_4$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ min(d_4$results) },
                       four_m = if (mean(d_4$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ mean(d_4$results) },
                       four_md = if (median(d_4$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ median(d_4$results) },
@@ -89,7 +86,6 @@ for(instance in melhor$instancia){
                       ten_md_time = median(d_10$time),
                       ten_time = min(d_10$time),
                       
-                      
                       twenty = if (min(d_20$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ min(d_20$results) },
                       twenty_m = if (mean(d_20$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ mean(d_20$results) },
                       twenty_md = if (median(d_20$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ median(d_20$results) },
@@ -104,7 +100,6 @@ for(instance in melhor$instancia){
                       thirty_md_time = median(d_30$time),
                       thirty_time = min(d_30$time),
                       
-                      
                       forty = if (min(d_40$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ min(d_40$results) },
                       forty_m = if (mean(d_40$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ mean(d_40$results) },
                       forty_md = if (median(d_40$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ median(d_40$results) },
@@ -112,14 +107,12 @@ for(instance in melhor$instancia){
                       forty_md_time = median(d_40$time),
                       forty_time = min(d_40$time),
                       
-                      
                       fifty = if (min(d_50$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ min(d_50$results) },
                       fifty_m = if (mean(d_50$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ mean(d_50$results) },
                       fifty_md = if (median(d_50$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ median(d_50$results) },
                       fifty_m_time = mean(d_50$time),
                       fifty_md_time = median(d_50$time),
                       fifty_time = min(d_50$time),
-                      
                       
                       sixty = if (min(d_60$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ min(d_60$results) },
                       sixty_m = if (mean(d_60$results) < melhor[melhor$instancia == instance, 5]) { melhor[melhor$instancia == instance, 5] } else{ mean(d_60$results) },
@@ -135,7 +128,6 @@ results = data.frame(results, one_g = (results$one - results$literatura)/results
                      one_m_g = (results$one_m - results$literatura)/results$literatura, 
                      one_md_g = (results$one_md - results$literatura)/results$literatura,
                      one_time_g = (results$one_m_time-results$one_time)/results$one_time,
-                     
                      
                      two_g = (results$two - results$literatura)/results$literatura, 
                      two_m_g = (results$two_m - results$literatura)/results$literatura, 
@@ -182,6 +174,8 @@ results = data.frame(results, one_g = (results$one - results$literatura)/results
                      sixty_md_g = (results$sixty_md - results$literatura)/results$literatura,
                      sixty_time_g = (results$sixty_m_time - results$sixty_time)/results$sixty_time)
 
+write.csv(results, file = "results.csv", row.names = FALSE)
+
 tb_mean <- c(mean(results$one_m_g), mean(results$two_m_g), mean(results$four_m_g), mean(results$eight_m_g),mean(results$ten_m_g),mean(results$twenty_m_g),mean(results$thirty_m_g),mean(results$forty_m_g),mean(results$fifty_m_g),mean(results$sixty_m_g)) 
 tb_min <- c(mean(results$one_g), mean(results$two_g), mean(results$four_g), mean(results$eight_g),mean(results$ten_g),mean(results$twenty_g),mean(results$thirty_g),mean(results$forty_g),mean(results$fifty_g),mean(results$sixty_g)) 
 tb_med <- c(mean(results$one_md_g), mean(results$two_md_g), mean(results$four_md_g), mean(results$eight_md_g), mean(results$ten_md_g), mean(results$twenty_md_g), mean(results$thirty_md_g), mean(results$forty_md_g), mean(results$fifty_md_g), mean(results$sixty_md_g))
@@ -196,18 +190,11 @@ df <- data.frame(quantidade_agentes = c(1,2,4,8,10,20,30,40,50,60),
 
 df <- melt(df ,  id.vars = 'quantidade_agentes', variable.name = 'legenda')
 
-plot(df$quantidade_agente,df$value, col = df$legenda, pch = c(rep(19,10),rep(15,10),rep(17,10)), ylab = "gap(%)", xlab = "Número de Agentes", xaxt = 'n');
-legend("topright",inset=c(0.02,0.05), legend = c("Melhor", "Média", "Mediana"), col=c("black", "red", "green"), pch = c(19,15,17), xpd=TRUE, horiz=TRUE, bty="n")
-axis(side=1, at=seq(1,1,1))
-axis(side=1, at=seq(2,2,1))
-axis(side=1, at=seq(4,4,1))
-axis(side=1, at=seq(8,8,1))
-axis(side=1, at=seq(10,10,1))
-axis(side=1, at=seq(20,20,1))
-axis(side=1, at=seq(30,30,1))
-axis(side=1, at=seq(40,40,1))
-axis(side=1, at=seq(50,50,1))
-axis(side=1, at=seq(60,60,1))
+plot(df$quantidade_agente,df$value, col = df$legenda, pch = c(rep(19,10),rep(15,10),rep(17,10)), ylab = "gap(%)", xlab = "Number of Agents", xaxt = 'n');
+legend("topright",inset=c(0.02,0.05), legend = c("Best", "Average", "Median"), col=c("black", "red", "green"), pch = c(19,15,17), xpd=TRUE, horiz=TRUE, bty="n")
+axis(side = 1, at = c(1, 2, 4, 8, 10, 20, 30, 40, 50, 60), 
+     labels = c("One", "Two", "Four", "Eight", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty"),
+     las = 2, cex.axis = 0.8)
 
 plot(log(df$quantidade_agentes),log(df$value), col = df$legenda, pch = c(rep(19,10),rep(15,10),rep(17,10)), ylab = "Log do gap(%)", xlab = "Log do Número de Agentes", xaxt = 'n');
 legend("topright",inset=c(0.02, 0.01), legend = c("Melhor", "Média", "Mediana"), col=c("black", "red", "green"), pch = c(19,15,17), xpd=TRUE, horiz=TRUE, bty="n")

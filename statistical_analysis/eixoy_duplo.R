@@ -1,5 +1,9 @@
-melhor <- read.delim("/home/jardell/Documentos/artigo_escalabilidade/melhor_total");
-melhor <- data.frame(melhor, results = melhor$n * 1000 + melhor$fo);
+rm(list = ls(all = TRUE))
+
+setwd(getwd())
+
+melhor <- read.delim("melhor_total.txt");
+melhor <- data.frame(melhor, results = melhor$n * 1000 + melhor$fo)
 
 dados <- data.frame(instance= character(),
                     bloco=character(),
@@ -20,16 +24,16 @@ dados_time <-data.frame(one = double(),
 
 for(instance in melhor$instancia){
   
-  d_1 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-OneAgent-30-",instance,"-.txt", sep = ""))
-  d_2 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-TwoAgent-30-",instance,"-.txt", sep = ""))
-  d_4 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-FourAgent-30-",instance,"-.txt", sep = ""))
-  d_8 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-EightAgent-30-",instance,"-.txt", sep = ""))
-  d_10 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-TenAgent-30-",instance,"-.txt", sep = ""))
-  d_20 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-TwentyAgent-30-",instance,"-.txt", sep = ""))
-  d_30 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-ThirtyAgent-30-",instance,"-.txt", sep = ""))
-  d_40 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-FortyAgent-30-",instance,"-.txt", sep = ""))
-  d_50 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-FiftyAgent-30-",instance,"-.txt", sep = ""))
-  d_60 <- read.delim(paste("/home/jardell/Documentos/artigo_escalabilidade/results_final/Results_BestSolutionNTry-SixtyAgent-30-",instance,"-.txt", sep = ""))
+  d_1 <- read.delim(paste("results_final/Results_BestSolutionNTry-OneAgent-30-",instance,"-.txt", sep = ""))
+  d_2 <- read.delim(paste("results_final/Results_BestSolutionNTry-TwoAgent-30-",instance,"-.txt", sep = ""))
+  d_4 <- read.delim(paste("results_final/Results_BestSolutionNTry-FourAgent-30-",instance,"-.txt", sep = ""))
+  d_8 <- read.delim(paste("results_final/Results_BestSolutionNTry-EightAgent-30-",instance,"-.txt", sep = ""))
+  d_10 <- read.delim(paste("results_final/Results_BestSolutionNTry-TenAgent-30-",instance,"-.txt", sep = ""))
+  d_20 <- read.delim(paste("results_final/Results_BestSolutionNTry-TwentyAgent-30-",instance,"-.txt", sep = ""))
+  d_30 <- read.delim(paste("results_final/Results_BestSolutionNTry-ThirtyAgent-30-",instance,"-.txt", sep = ""))
+  d_40 <- read.delim(paste("results_final/Results_BestSolutionNTry-FortyAgent-30-",instance,"-.txt", sep = ""))
+  d_50 <- read.delim(paste("results_final/Results_BestSolutionNTry-FiftyAgent-30-",instance,"-.txt", sep = ""))
+  d_60 <- read.delim(paste("results_final/Results_BestSolutionNTry-SixtyAgent-30-",instance,"-.txt", sep = ""))
   
   d_1 <- data.frame(d_1, results = d_1$n * 1000 + d_1$fo)
   d_2 <- data.frame(d_2, results = d_2$n * 1000 + d_2$fo)
@@ -143,19 +147,13 @@ for(instance in melhor$instancia){
   dados_time <- rbind.data.frame(dados_time, dados_t)
 }
 
-dados_g <- read.delim("/home/jardell/Documentos/artigo_escalabilidade/teste_results.csv");
-#dados_time <- read.delim("/home/jardell/Documentos/artigo_escalabilidade/dados_time.csv");
+dados_time <- read.csv("dados_time.csv", sep = "", dec = ".");
+dados_g <- read.csv("oficial_results.csv", sep = "", dec = ".");
 
-## set up some fake test data
 agentes <- c(1, 2, 4, 8, 10, 20, 30, 40, 50, 60)
 
-#fo <- c(mean(dados_g$one_m_g), mean(dados_g$two_m_g), mean(dados_g$four_m_g), mean(dados_g$eight_m_g), mean(dados_g$ten_m_g), mean(dados_g$twenty_m_g), mean(dados_g$thirty_m_g), mean(dados_g$forty_m_g), mean(dados_g$fifty_m_g), mean(dados_g$sixty_m_g))
 fo <- c(mean(dados_g$one_m), mean(dados_g$two_m), mean(dados_g$four_m), mean(dados_g$eight_m), mean(dados_g$ten_m), mean(dados_g$twenty_m), mean(dados_g$thirty_m), mean(dados_g$forty_m), mean(dados_g$fifty_m), mean(dados_g$sixty_m))
-#fo <- -0.1737173 * agentes - 2.6760706
-#tempo <- c(mean(dados$one_m_time), mean(dados$two_m_time), mean(dados$four_m_time), mean(dados$eight_m_time), mean(dados$ten_m_time), mean(dados$twenty_m_time), mean(dados$thirty_m_time), mean(dados$forty_m_time), mean(dados$fifty_m_time), mean(dados$sixty_m_time))
 tempo <- c(mean(dados_time$one), mean(dados_time$two), mean(dados_time$four), mean(dados_time$eight), mean(dados_time$ten), mean(dados_time$twenty), mean(dados_time$thirty), mean(dados_time$forty), mean(dados_time$fifty), mean(dados_time$sixty))
-
-#tempo <- 0.9074146 * agentes + 137.7802250
 
 ## add extra space to right margin of plot within frame
 par(mar=c(4, 5, 4, 5) + 0.1)
@@ -163,43 +161,22 @@ par(mar=c(4, 5, 4, 5) + 0.1)
 ## Plot first set of data and draw its axis
 plot(agentes, fo, pch=16, axes=FALSE, #ylim=c(-14,-2), 
      xlab="", ylab="", 
-     type="b",col="black")#, main="Objective Function (average) x Average Time(s)"
-axis(2, 
-     #ylim=c(0,1),
-     col="black",las=1)  ## las=1 makes horizontal labels
-#mtext("Objective Function (average)",side=2.5,line=3.5)
-mtext("Função Objetivo (média)",side=2.5,line=3.5)
-#box()
+     type="b",col="black")
+axis(2, col="black",las=1)
+mtext("Objective Function (average)",side=2.5,line=3.5)
 
 ## Allow a second plot on the same graph
 par(new=TRUE)
 
 ## Plot the second plot and put axis scale on right
-plot(agentes, tempo, pch=15,  xlab="", ylab="", #ylim=c(130,200), 
+plot(agentes, tempo, pch=15,  xlab="", ylab="", 
      axes=FALSE, type="b", col="red")
-## a little farther out (line=4) to make room for labels
-#mtext("Average Time(s)",side=4,col="red",line=3)
-mtext("Tempo Médio(s)",side=4,col="red",line=3)
-axis(4, #ylim=c(0,7000), 
-     col="red",col.axis="red",las=1)
+mtext("Average Time(s)",side=4,col="red",line=3)
+axis(4, col="red",col.axis="red",las=1)
 
-## Draw the time axis
-axis(side=1, at=seq(1,60,59))
-axis(side=1, at=seq(1,1,1))
-axis(side=1, at=seq(2,2,1))
-axis(side=1, at=seq(4,4,1))
-axis(side=1, at=seq(8,8,1))
-axis(side=1, at=seq(10,10,1))
-axis(side=1, at=seq(20,20,1))
-axis(side=1, at=seq(30,30,1))
-axis(side=1, at=seq(40,40,1))
-axis(side=1, at=seq(50,50,1))
-#axis(1,pretty(range(agentes),10))
-#mtext("Number of Agents",side=1,col="black",line=2.5)
-mtext("Número de Agentes",side=1,col="black",line=2.5) 
+## Substituir os números no eixo x pelos equivalentes em inglês
+nomes_ingles <- c("one", "two", "four", "eight", "ten", "twenty", "thirty", "forty", "fifty", "sixty")
+axis(side=1, at=agentes, labels=nomes_ingles, las = 2, cex.axis = 0.8)
+mtext("Number of Agents",side=1,col="black",line=2.5) 
 
-## Add Legend
-  #legend("topright",inset=c(0.4,-0.01),legend=c("Objective Function","Time"), text.col=c("black","red"),pch=c(16,15),col=c("black","red"),  xpd=TRUE, horiz=TRUE, bty="n")
-  legend("topright",inset=c(0.4,-0.01),legend=c("Função Objetivo","Tempo"), text.col=c("black","red"),pch=c(16,15),col=c("black","red"),  xpd=TRUE, horiz=TRUE, bty="n")
-  
-  
+legend("topright",inset=c(0.4,-0.01),legend=c("Objective Function","Time"), text.col=c("black","red"),pch=c(16,15),col=c("black","red"),  xpd=TRUE, horiz=TRUE, bty="n")
