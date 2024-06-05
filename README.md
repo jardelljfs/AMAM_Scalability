@@ -42,15 +42,15 @@ The experiments were divided into 4 sessions. To facilitate the interpretation o
 
 To better present the results visually, dynamic files were created for each problem addressed.
 
-[VRPTW analysis](https://jardell-jfs.shinyapps.io/vrptw_analysis/)
+1. [VRPTW analysis](https://jardell-jfs.shinyapps.io/vrptw_analysis/)
 
-[UPMSP-ST analysis](https://jardell-jfs.shinyapps.io/pmp_analysis/)
+2. [UPMSP-ST analysis](https://jardell-jfs.shinyapps.io/pmp_analysis/)
 
 The raw data for each problem can be found in the following `.csv` files:
 
-[`vrp_data.csv`](statistical_analysis/vrp_data.csv)
+1. VRPTW [`vrp_data.csv`](statistical_analysis/vrp_data.csv)
 
-[`pmp_data.csv`](statistical_analysis/pmp_data.csv)
+2. UPMSP-ST [`pmp_data.csv`](statistical_analysis/pmp_data.csv)
 
 ## Instances
 
