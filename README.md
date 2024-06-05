@@ -42,9 +42,9 @@ The experiments were divided into 4 sessions. To facilitate the interpretation o
 
 To better present the results visually, dynamic files were created for each problem addressed.
 
-1. [VRPTW analysis](https://jardell-jfs.shinyapps.io/vrptw_analysis/)
+1. [`VRPTW analysis`](https://jardell-jfs.shinyapps.io/vrptw_analysis/)
 
-2. [UPMSP-ST analysis](https://jardell-jfs.shinyapps.io/pmp_analysis/)
+2. [`UPMSP-ST analysis`](https://jardell-jfs.shinyapps.io/pmp_analysis/)
 
 The raw data for each problem can be found in the following `.csv` files:
 
@@ -56,15 +56,15 @@ The raw data for each problem can be found in the following `.csv` files:
 
 For the instantiation of the AMAM Framework, the experiments used the following sets of instances available in the literature:
 
-1. VRPTW: the set of $56$ instances with $100$ clients proposed by Solomon (1987), avaiable at [https://www.sintef.no/projectweb/top/vrptw/100-customers/](https://www.sintef.no/projectweb/top/vrptw/100-customers/), which is a benchmark for this problem. These instances present three different customer sets (C-Cluster, R-Random, and RC-Random-Cluster) according to the considered geographic distribution. The geographic positions of customers are grouped in problem sets C1 and C2, randomly generated in problem sets R1 and R2, and a mixture of random and grouped structures in problem sets RC1 and RC2. Additionally, the problem sets C1, R1, and RC1 have narrow time windows, while the problem sets C2, R2, and RC2 have large time windows;
+1. VRPTW: the set of $56$ instances with $100$ clients proposed by Solomon (1987), available at [https://www.sintef.no/projectweb/top/vrptw/100-customers/](https://www.sintef.no/projectweb/top/vrptw/100-customers/), which is a benchmark for this problem. These instances present three different customer sets (C-Cluster, R-Random, and RC-Random-Cluster) according to the considered geographic distribution. The geographic positions of customers are grouped in problem sets C1 and C2, randomly generated in problem sets R1 and R2, and a mixture of random and grouped structures in problem sets RC1 and RC2. Additionally, the problem sets C1, R1, and RC1 have narrow time windows, while the problem sets C2, R2, and RC2 have large time windows;
 
 2. UPMSP-ST: the set of instances proposed by Vallada (2011), available at [http://soa.iti.es/problem-instances](http://soa.iti.es/problem-instances}). To evaluate AMAM, we chose $16$ instances of this data set, involving combinations of $50$ jobs, with $10$, $15$, $20$ and $25$ machines.
 \end{enumerate}
 
-All used instances are available in folder [instances](instances).
+All used instances are available in folder [`instances`](instances).
 
 ## Parameters
 
-The parameters for the methods used are found in folder [parameters](parameters).
+The parameters for the methods used are found in folder [`parameters`](parameters).
 
-The parameters for the experiments are found in folder [tests](tests).
+The parameters for the experiments are found in folder [`tests`](tests).
