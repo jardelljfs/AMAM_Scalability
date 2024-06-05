@@ -32,10 +32,22 @@ The experiments aim to investigate the performance of the AMAM Framework when th
 
 ## Instances
 
-[instances](instances)
+[`instances`](instances)
 
 ## Parameters
 
 [parameters](parameters)
 [tests](tests)
+
+`computational_results.R`
+
+statistical_analysis.R
+
+linear_adjustment.R
+
+single_agent_multi-agent.R
+
+pmp_data.csv
+
+vrp_data.csv
 
