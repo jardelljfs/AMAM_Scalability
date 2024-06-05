@@ -7,12 +7,12 @@ rm(list = ls(all = TRUE))
 
 setwd(dirname(rstudioapi::getSourceEditorContext()$path))
 
-melhor <- read.delim("instances_pmp2.txt", header = T)
+melhor <- read.delim("pmp_instances.txt", header = T)
 
 #------------1800 x 1800 ------------------
 
-dados_1800_one <- read.csv("results_50_1_60.csv", sep = ",", dec = ".");
-dados_1800_sixty <- read.csv("results_50_1_60_60.csv", sep = ",", dec = ".");
+dados_1800_one <- read.csv("pmp_50_1_60.csv", sep = ",", dec = ".");
+dados_1800_sixty <- read.csv("pmp_50_1_60_60.csv", sep = ",", dec = ".");
 dados_1800_sixty <- dados_1800_sixty %>%
   mutate(metodo = ifelse(metodo == 60, "SixtyAgent", metodo))
 
@@ -50,7 +50,7 @@ d_60_1800 <- rbind.data.frame(d_1_1800, d_60_1800);
 
 #--------------30 x 30-------------
 
-dados_30 <- read.csv("results_50.csv", sep = ",", dec = ".");
+dados_30 <- read.csv("pmp_data.csv", sep = ",", dec = ".");
 dados_30 <- merge(dados_30, melhor, by.x = "instance", by.y = "instance")
 dados_30$gap <- (dados_30$fitness - dados_30$best) / dados_30$best
 
@@ -114,21 +114,10 @@ p3 = ggplot(d_1_30_m, aes(tratamento, gap)) + geom_boxplot() + #ggtitle("Machine
 t3 = ggplot(d_1_30_m, aes(tratamento, time)) + geom_boxplot() + #ggtitle("Machine 30 x 30 - Computational Time") +   
   labs(x = "number of agents", y = "time(s)")
 
-p
-t
-p2
-t2
-p1
-t1
-p3
-t3
-
 (p + t) / (p2 + t2) / (p1 + t1)  / (p3 + t3)
 
 #_________________________________________________________TESTE ESTATISTICO_________________________________________________
-#model <- aov(results ~ tratamento, data = d_60);
-#model
-#summary(model)
+
 pairwise.t.test(d_60_1800$gap, d_60_1800$tratamento, p.adjust.method="bonferroni")
 pairwise.t.test(d_60_1800$time, d_60_1800$tratamento, p.adjust.method="bonferroni")
 
