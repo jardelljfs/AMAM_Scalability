@@ -24,11 +24,18 @@ The AMAM Framework was implemented in Java, with JDK~8, using IDE Eclipse. The r
 
 The experiments aim to investigate the performance of the AMAM Framework when the number of agents grows. The objective is to evaluate the structure regarding its scalability. Based on the heterogeneity of the ways of measuring scalability, the experiments assess whether the inclusion of agents in the framework has a direct influence on its performance concerning the quality of the obtained results for the objective function values as well as the obtained runtimes.
 
+[statistical_analysis](statistical_analysis)
+
 [VRPTW analysis](https://jardell-jfs.shinyapps.io/vrptw_analysis/)
 
 [UPMSP-ST analysis](https://jardell-jfs.shinyapps.io/pmp_analysis/)
 
 ## Instances
 
-[instance](instance)
+[instances](instances)
+
+## Parameters
+
+[parameters](parameters)
+[tests](tests)
 
