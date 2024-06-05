@@ -14,9 +14,13 @@ This article was submitted to [Engineering Applications of Artificial Intelligen
 
 ## AMAM Framework
 
-The AMAM Framework is available here: [https://github.com/mamelials/AMAM-Multiagente-Architecture-for-Metaheuristics](https://github.com/mamelials/AMAM-Multiagente-Architecture-for-Metaheuristics) 
+The AMAM Framework is available here: [https://github.com/mamelials/AMAM-Multiagente-Architecture-for-Metaheuristics](https://github.com/mamelials/AMAM-Multiagente-Architecture-for-Metaheuristics). The AMAM Framework was implemented in Java, with JDK~8, using IDE Eclipse.
 
-The AMAM Framework was implemented in Java, with JDK~8, using IDE Eclipse. The results were obtained using the computational cluster of the Federal University of Viçosa - UFV, maintained by the Scientific and Technological Development Support Division [https://dct.ufv.br](https://dct.ufv.br). The used computer node has the following configurations: Intel Xeon Silver 4216 processor (22 MB Cache, 2.1 GHz, 16 cores 384 GB RAM), totaling 64 execution cores, with the Linux CentOS operating system. The codes used in this work are available on [GitHub](https://github.com/jardelljfs/AMAM_Scalability).
+-------------------------------------------------------------------------------------------------------
+
+## Execution
+
+The results were obtained using the computational cluster of the Federal University of Viçosa - UFV, maintained by the Scientific and Technological Development Support Division [https://dct.ufv.br](https://dct.ufv.br). The used computer node has the following configurations: Intel Xeon Silver 4216 processor (22 MB Cache, 2.1 GHz, 16 cores 384 GB RAM), totaling 64 execution cores, with the Linux CentOS operating system. The codes used in this work are available on [GitHub](https://github.com/jardelljfs/AMAM_Scalability).
 
 -------------------------------------------------------------------------------------------------------
 
@@ -24,30 +28,43 @@ The AMAM Framework was implemented in Java, with JDK~8, using IDE Eclipse. The r
 
 The experiments aim to investigate the performance of the AMAM Framework when the number of agents grows. The objective is to evaluate the structure regarding its scalability. Based on the heterogeneity of the ways of measuring scalability, the experiments assess whether the inclusion of agents in the framework has a direct influence on its performance concerning the quality of the obtained results for the objective function values as well as the obtained runtimes.
 
-[statistical_analysis](statistical_analysis)
+Todos as análises estatisticas são apresentadas na pasta [statistical_analysis](statistical_analysis).
+
+The experiments were divided into 4 sessions. To facilitate the interpretation of the analyses, `.R` files were created for each session, as follows:
+
+1. [`computational_results.R`](statistical_analysis/computational_results.R)
+
+2. [`statistical_analysis.R`](statistical_analysis/statistical_analysis.R)
+
+3. [`linear_adjustment.R`](statistical_analysis/linear_adjustment.R)
+
+4. [`single_agent_multi-agent.R`](statistical_analysis/single_agent_multi-agent.R)
+
+To better present the results visually, dynamic files were created for each problem addressed.
 
 [VRPTW analysis](https://jardell-jfs.shinyapps.io/vrptw_analysis/)
 
 [UPMSP-ST analysis](https://jardell-jfs.shinyapps.io/pmp_analysis/)
 
+The raw data for each problem can be found in the following `.csv` files:
+
+[`vrp_data.csv`](statistical_analysis/vrp_data.csv)
+
+[`pmp_data.csv`](statistical_analysis/pmp_data.csv)
+
 ## Instances
 
-[`instances`](instances)
+For the instantiation of the AMAM Framework, the experiments used the following sets of instances available in the literature:
+
+1. VRPTW: the set of $56$ instances with $100$ clients proposed by Solomon (1987), avaiable at [https://www.sintef.no/projectweb/top/vrptw/100-customers/](https://www.sintef.no/projectweb/top/vrptw/100-customers/), which is a benchmark for this problem. These instances present three different customer sets (C-Cluster, R-Random, and RC-Random-Cluster) according to the considered geographic distribution. The geographic positions of customers are grouped in problem sets C1 and C2, randomly generated in problem sets R1 and R2, and a mixture of random and grouped structures in problem sets RC1 and RC2. Additionally, the problem sets C1, R1, and RC1 have narrow time windows, while the problem sets C2, R2, and RC2 have large time windows;
+
+2. UPMSP-ST: the set of instances proposed by Vallada (2011), available at [http://soa.iti.es/problem-instances](http://soa.iti.es/problem-instances}). To evaluate AMAM, we chose $16$ instances of this data set, involving combinations of $50$ jobs, with $10$, $15$, $20$ and $25$ machines.
+\end{enumerate}
+
+All used instances are available in folder [instances](instances).
 
 ## Parameters
 
-[parameters](parameters)
-[tests](tests)
+The parameters for the methods used are found in folder [parameters](parameters).
 
-`computational_results.R`
-
-statistical_analysis.R
-
-linear_adjustment.R
-
-single_agent_multi-agent.R
-
-pmp_data.csv
-
-vrp_data.csv
-
+The parameters for the experiments are found in folder [tests](tests).
