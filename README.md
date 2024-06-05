@@ -8,13 +8,13 @@ This paper addresses the scalability dimension of a multi-agent framework for so
 
 Maria Amélia Lopes Silva, Jardell Fillipe da Silva, Sérgio Ricardo de Souza e Marcone Jamilson Freitas Souza (2024). UFV - Campus Florestal, CEFET-MG e UFOP 2024
 
-This article was submitted to [Engineering Applications of Artificial Intelligence](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence){target="_blank"} on 12/26/2023.
+This article was submitted to [Engineering Applications of Artificial Intelligence](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence) on 12/26/2023.
 
 -------------------------------------------------------------------------------------------------------
 
 ## Implementation
 
-The AMAM Framework was implemented in Java, with JDK~8, using IDE Eclipse. The results were obtained using the computational cluster of the Federal University of Viçosa - UFV, maintained by the Scientific and Technological Development Support Division [https://dct.ufv.br](https://dct.ufv.br){target="_blank"}. The used computer node has the following configurations: Intel Xeon Silver 4216 processor (22 MB Cache, 2.1 GHz, 16 cores 384 GB RAM), totaling 64 execution cores, with the Linux CentOS operating system. The codes used in this work are available on [GitHub](https://github.com/jardelljfs/AMAM_Scalability){target="_blank"}.
+The AMAM Framework was implemented in Java, with JDK~8, using IDE Eclipse. The results were obtained using the computational cluster of the Federal University of Viçosa - UFV, maintained by the Scientific and Technological Development Support Division [https://dct.ufv.br](https://dct.ufv.br). The used computer node has the following configurations: Intel Xeon Silver 4216 processor (22 MB Cache, 2.1 GHz, 16 cores 384 GB RAM), totaling 64 execution cores, with the Linux CentOS operating system. The codes used in this work are available on [GitHub](https://github.com/jardelljfs/AMAM_Scalability).
 
 -------------------------------------------------------------------------------------------------------
 
