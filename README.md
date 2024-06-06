@@ -18,12 +18,6 @@ The AMAM Framework is available here: [https://github.com/mamelials/AMAM-Multiag
 
 -------------------------------------------------------------------------------------------------------
 
-## Execution
-
-The results were obtained using the computational cluster of the Federal University of Viçosa - UFV, maintained by the Scientific and Technological Development Support Division [https://dct.ufv.br](https://dct.ufv.br). The used computer node has the following configurations: Intel Xeon Silver 4216 processor (22 MB Cache, 2.1 GHz, 16 cores 384 GB RAM), totaling 64 execution cores, with the Linux CentOS operating system. The codes used in this work are available on [GitHub](https://github.com/jardelljfs/AMAM_Scalability).
-
--------------------------------------------------------------------------------------------------------
-
 ## Statistical Analysis
 
 The experiments aim to investigate the performance of the AMAM Framework when the number of agents grows. The objective is to evaluate the structure regarding its scalability. Based on the heterogeneity of the ways of measuring scalability, the experiments assess whether the inclusion of agents in the framework has a direct influence on its performance concerning the quality of the obtained results for the objective function values as well as the obtained runtimes.
@@ -52,6 +46,14 @@ To better present the results visually, dynamic files were created for each prob
 
 2. [`UPMSP-ST Statistical Analysis`](https://jardell-jfs.shinyapps.io/pmp_analysis/)
 
+-------------------------------------------------------------------------------------------------------
+
+## Execution
+
+The results were obtained using the computational cluster of the Federal University of Viçosa - UFV, maintained by the Scientific and Technological Development Support Division [https://dct.ufv.br](https://dct.ufv.br). The used computer node has the following configurations: Intel Xeon Silver 4216 processor (22 MB Cache, 2.1 GHz, 16 cores 384 GB RAM), totaling 64 execution cores, with the Linux CentOS operating system. The codes used in this work are available on [GitHub](https://github.com/jardelljfs/AMAM_Scalability).
+
+-------------------------------------------------------------------------------------------------------
+
 ## Instances
 
 For the instantiation of the AMAM Framework, the experiments used the following sets of instances available in the literature:
@@ -62,6 +64,8 @@ For the instantiation of the AMAM Framework, the experiments used the following 
 \end{enumerate}
 
 All used instances are available in folder [`instances`](instances).
+
+-------------------------------------------------------------------------------------------------------
 
 ## Parameters
 
