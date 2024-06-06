@@ -40,17 +40,17 @@ The experiments were divided into 4 sessions. To facilitate the interpretation o
 
 4. [`single_agent_multi-agent.R`](statistical_analysis/single_agent_multi-agent.R)
 
-To better present the results visually, dynamic files were created for each problem addressed.
-
-1. [`VRPTW analysis`](https://jardell-jfs.shinyapps.io/vrptw_analysis/)
-
-2. [`UPMSP-ST analysis`](https://jardell-jfs.shinyapps.io/pmp_analysis/)
-
 The raw data for each problem can be found in the following `.csv` files:
 
 1. VRPTW [`vrp_data.csv`](statistical_analysis/vrp_data.csv)
 
 2. UPMSP-ST [`pmp_data.csv`](statistical_analysis/pmp_data.csv)
+
+To better present the results visually, dynamic files were created for each problem addressed.
+
+1. [`VRPTW Statistical Analysis`](https://jardell-jfs.shinyapps.io/vrptw_analysis/)
+
+2. [`UPMSP-ST Statistical Analysis`](https://jardell-jfs.shinyapps.io/pmp_analysis/)
 
 ## Instances
 
