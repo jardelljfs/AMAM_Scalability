@@ -1,0 +1,669 @@
+#!/bin/bash
+
+#PBS -N PMP_todos_1_60
+#PBS -l select=1:ncpus=64:features=RAM364:mem=376gb
+#PBS -q high_mem
+#PBS -m abe
+#PBS -M jardell.silva@ufv.br
+
+# Seu roteiro comeca a partir daqui:
+
+# Altera o diretorio corrente para o diretorio de onde foi submetido o script
+# Nao remova a linha abaixo
+cd $PBS_O_WORKDIR 
+ 
+# Habilita o carregamento de modulos
+# Nao remova a linha abaixo
+source /etc/profile.d/modules.sh 
+ 
+# Carregar os softwares que serao utilizados no seu script
+module load dct-utils/1.0
+cpuset
+module load java/jre1.8.0_66
+
+# Coloque aqui o comando do software carregado
+# Configure de acordo com a sua analise e parametros que desejar
+
+pm="PM_"
+
+for k in I_50_10_S_1-9_1	I_50_10_S_1-49_1	I_50_10_S_1-99_1	I_50_10_S_1-124_1	I_50_15_S_1-9_1	I_50_15_S_1-49_1	I_50_15_S_1-99_1	I_50_15_S_1-124_1	I_50_20_S_1-9_1	I_50_20_S_1-49_1	I_50_20_S_1-99_1	I_50_20_S_1-124_1	I_50_25_S_1-9_1	I_50_25_S_1-49_1	I_50_25_S_1-99_1	I_50_25_S_1-124_1	I_100_10_S_1-9_1	I_100_10_S_1-49_1	I_100_10_S_1-99_1	I_100_10_S_1-124_1	I_100_15_S_1-9_1	I_100_15_S_1-49_1	I_100_15_S_1-99_1	I_100_15_S_1-124_1	I_100_20_S_1-9_1	I_100_20_S_1-49_1	I_100_20_S_1-99_1	I_100_20_S_1-124_1	I_100_25_S_1-9_1	I_100_25_S_1-49_1	I_100_25_S_1-99_1	I_100_25_S_1-124_1
+do	
+
+	for i in 0 60 120 180 240 300 360 420 480 540 600 660 720 480 840 900 960 1020 1080 1140 1200 1260 1320 1380 1440 1500 1560 1620 1680 1740 1800
+	
+	do
+		cont_cpu=0;
+		
+		java -jar PMP_1_0.jar $k OneAgent $i $pm >> output & arm=`ps -ef | grep "PMP_1_0.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_1.jar $k OneAgent $(($i+1)) $pm >> output & arm=`ps -ef | grep "PMP_1_1.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_2.jar $k OneAgent $(($i+2)) $pm >> output & arm=`ps -ef | grep "PMP_1_2.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_3.jar $k OneAgent $(($i+3)) $pm >> output & arm=`ps -ef | grep "PMP_1_3.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_4.jar $k OneAgent $(($i+4)) $pm >> output & arm=`ps -ef | grep "PMP_1_4.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_5.jar $k OneAgent $(($i+5)) $pm >> output & arm=`ps -ef | grep "PMP_1_5.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_6.jar $k OneAgent $(($i+6)) $pm >> output & arm=`ps -ef | grep "PMP_1_6.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_7.jar $k OneAgent $(($i+7)) $pm >> output & arm=`ps -ef | grep "PMP_1_7.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_8.jar $k OneAgent $(($i+8)) $pm >> output & arm=`ps -ef | grep "PMP_1_8.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_9.jar $k OneAgent $(($i+9)) $pm >> output & arm=`ps -ef | grep "PMP_1_9.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_10.jar $k OneAgent $(($i+10)) $pm >> output & arm=`ps -ef | grep "PMP_1_10.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_11.jar $k OneAgent $(($i+11)) $pm >> output & arm=`ps -ef | grep "PMP_1_11.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_12.jar $k OneAgent $(($i+12)) $pm >> output & arm=`ps -ef | grep "PMP_1_12.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_13.jar $k OneAgent $(($i+13)) $pm >> output & arm=`ps -ef | grep "PMP_1_13.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_14.jar $k OneAgent $(($i+14)) $pm >> output & arm=`ps -ef | grep "PMP_1_14.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_15.jar $k OneAgent $(($i+15)) $pm >> output & arm=`ps -ef | grep "PMP_1_15.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_16.jar $k OneAgent $(($i+16)) $pm >> output & arm=`ps -ef | grep "PMP_1_16.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_17.jar $k OneAgent $(($i+17)) $pm >> output & arm=`ps -ef | grep "PMP_1_17.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_18.jar $k OneAgent $(($i+18)) $pm >> output & arm=`ps -ef | grep "PMP_1_18.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_19.jar $k OneAgent $(($i+19)) $pm >> output & arm=`ps -ef | grep "PMP_1_19.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_20.jar $k OneAgent $(($i+20)) $pm >> output & arm=`ps -ef | grep "PMP_1_20.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_21.jar $k OneAgent $(($i+21)) $pm >> output & arm=`ps -ef | grep "PMP_1_21.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_22.jar $k OneAgent $(($i+22)) $pm >> output & arm=`ps -ef | grep "PMP_1_22.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_23.jar $k OneAgent $(($i+23)) $pm >> output & arm=`ps -ef | grep "PMP_1_23.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_24.jar $k OneAgent $(($i+24)) $pm >> output & arm=`ps -ef | grep "PMP_1_24.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_25.jar $k OneAgent $(($i+25)) $pm >> output & arm=`ps -ef | grep "PMP_1_25.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_26.jar $k OneAgent $(($i+26)) $pm >> output & arm=`ps -ef | grep "PMP_1_26.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_27.jar $k OneAgent $(($i+27)) $pm >> output & arm=`ps -ef | grep "PMP_1_27.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_28.jar $k OneAgent $(($i+28)) $pm >> output & arm=`ps -ef | grep "PMP_1_28.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_29.jar $k OneAgent $(($i+29)) $pm >> output & arm=`ps -ef | grep "PMP_1_29.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_30.jar $k OneAgent $(($i+30)) $pm >> output & arm=`ps -ef | grep "PMP_1_30.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_31.jar $k OneAgent $(($i+31)) $pm >> output & arm=`ps -ef | grep "PMP_1_31.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_32.jar $k OneAgent $(($i+32)) $pm >> output & arm=`ps -ef | grep "PMP_1_32.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_33.jar $k OneAgent $(($i+33)) $pm >> output & arm=`ps -ef | grep "PMP_1_33.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_34.jar $k OneAgent $(($i+34)) $pm >> output & arm=`ps -ef | grep "PMP_1_34.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_35.jar $k OneAgent $(($i+35)) $pm >> output & arm=`ps -ef | grep "PMP_1_35.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_36.jar $k OneAgent $(($i+36)) $pm >> output & arm=`ps -ef | grep "PMP_1_36.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_37.jar $k OneAgent $(($i+37)) $pm >> output & arm=`ps -ef | grep "PMP_1_37.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_38.jar $k OneAgent $(($i+38)) $pm >> output & arm=`ps -ef | grep "PMP_1_38.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_39.jar $k OneAgent $(($i+39)) $pm >> output & arm=`ps -ef | grep "PMP_1_39.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_40.jar $k OneAgent $(($i+40)) $pm >> output & arm=`ps -ef | grep "PMP_1_40.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_41.jar $k OneAgent $(($i+41)) $pm >> output & arm=`ps -ef | grep "PMP_1_41.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_42.jar $k OneAgent $(($i+42)) $pm >> output & arm=`ps -ef | grep "PMP_1_42.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_43.jar $k OneAgent $(($i+43)) $pm >> output & arm=`ps -ef | grep "PMP_1_43.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_44.jar $k OneAgent $(($i+44)) $pm >> output & arm=`ps -ef | grep "PMP_1_44.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_45.jar $k OneAgent $(($i+45)) $pm >> output & arm=`ps -ef | grep "PMP_1_45.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_46.jar $k OneAgent $(($i+46)) $pm >> output & arm=`ps -ef | grep "PMP_1_46.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_47.jar $k OneAgent $(($i+47)) $pm >> output & arm=`ps -ef | grep "PMP_1_47.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_48.jar $k OneAgent $(($i+48)) $pm >> output & arm=`ps -ef | grep "PMP_1_48.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_49.jar $k OneAgent $(($i+49)) $pm >> output & arm=`ps -ef | grep "PMP_1_49.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_50.jar $k OneAgent $(($i+50)) $pm >> output & arm=`ps -ef | grep "PMP_1_50.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_51.jar $k OneAgent $(($i+51)) $pm >> output & arm=`ps -ef | grep "PMP_1_51.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_52.jar $k OneAgent $(($i+52)) $pm >> output & arm=`ps -ef | grep "PMP_1_52.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_53.jar $k OneAgent $(($i+53)) $pm >> output & arm=`ps -ef | grep "PMP_1_53.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_54.jar $k OneAgent $(($i+54)) $pm >> output & arm=`ps -ef | grep "PMP_1_54.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_55.jar $k OneAgent $(($i+55)) $pm >> output & arm=`ps -ef | grep "PMP_1_55.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		java -jar PMP_1_56.jar $k OneAgent $(($i+56)) $pm >> output & arm=`ps -ef | grep "PMP_1_56.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+			
+		java -jar PMP_1_57.jar $k OneAgent $(($i+57)) $pm >> output & arm=`ps -ef | grep "PMP_1_57.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_58.jar $k OneAgent $(($i+58)) $pm >> output & arm=`ps -ef | grep "PMP_1_58.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+				
+		java -jar PMP_1_59.jar $k OneAgent $(($i+59)) $pm >> output & arm=`ps -ef | grep "PMP_1_59.jar" | grep -v "grep" | awk '{print $2}'`;
+	
+		lista=(`ps -T $arm | grep Rl | grep -v "grep" | awk '{print $2}'`);
+	
+		tam_lista=${#lista[@]};
+		inicio=$(($tam_lista-1));
+		fim=$(($tam_lista-1));		
+	
+		taskset -cp $cont_cpu ${lista[$fim]};
+		cont_cpu=$((cont_cpu+1));
+		
+		wait;
+	done
+done

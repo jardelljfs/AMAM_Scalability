@@ -28,11 +28,16 @@ df <- data.frame(quantidade_agentes = c(1,2,4,8,10,20,30,40,50,60),
 
 df <- melt(df,  id.vars = 'quantidade_agentes', variable.name = 'legenda')
 
-plot(df$quantidade_agente,df$value, col = df$legenda, pch = c(rep(19,10),rep(15,10),rep(17,10)), ylab = "gap(%)", xlab = "Number of Agents", xaxt = 'n');
-legend("topright",inset=c(0.02,0.05), legend = c("Best", "Average", "Median"), col=c("black", "red", "green"), pch = c(19,15,17), xpd=TRUE, horiz=TRUE, bty="n")
+plot(df$quantidade_agente,df$value, col = df$legenda, pch = c(rep(19,10),rep(15,10),rep(17,10)), ylab = "gap(%)", xlab = "Number of Agents", xaxt = 'n',
+     cex.axis = 1.0,     # Aumenta o tamanho dos valores no eixo
+     cex.lab = 1.2,      # Aumenta o tamanho dos rótulos dos eixos
+     cex.main = 1.2);
+legend("topright",inset=c(0.02,0.05), legend = c("Best", "Average", "Median"), col=c("black", "red", "green"), pch = c(19,15,17), xpd=TRUE, horiz=TRUE, bty="n",
+       cex = 1.5)
 axis(side = 1, at = c(1, 2, 4, 8, 10, 20, 30, 40, 50, 60), 
      labels = c("One", "Two", "Four", "Eight", "Ten", "Twenty", "Thirty", "Forty", "Fifty", "Sixty"),
-     las = 2, cex.axis = 0.8)
+     las = 2,
+     cex.axis = 1.0)
 
 #--------Graph of average computational time--------------------
 
