@@ -10,8 +10,8 @@ Maria Amélia Lopes Silva, Jardell Fillipe da Silva, Sérgio Ricardo de Souza e 
 
 This article was submitted to [Engineering Applications of Artificial Intelligence](https://www.sciencedirect.com/journal/engineering-applications-of-artificial-intelligence) on 12/26/2023, Accepted 23 November 2024, Available online 23 December 2024.
 
-[DOI - https://doi.org/10.1016/j.engappai.2024.109738] (https://www.sciencedirect.com/science/article/pii/S0952197624018967)
-[URL - https://www.sciencedirect.com/science/article/pii/S0952197624018967] (https://www.sciencedirect.com/science/article/pii/S0952197624018967)
+[DOI] (https://www.sciencedirect.com/science/article/pii/S0952197624018967)
+[URL] (https://www.sciencedirect.com/science/article/pii/S0952197624018967)
 
 -------------------------------------------------------------------------------------------------------
 
